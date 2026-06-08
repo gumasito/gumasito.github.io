@@ -539,7 +539,7 @@ hr {
 }
 
 .footer--redes {
-    font-size: clamp(.9rem, 1.5vw, 1rem);
+    font-size: clamp(.9rem, 1.5vw, 1.3rem);
 }
 
 .footer-div {

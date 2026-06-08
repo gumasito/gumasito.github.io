@@ -310,6 +310,7 @@ var swiper2 = new Swiper(".mySwiper2", {
     thumbs: {
         swiper: swiper,
     },
+    loop:true,
 });
 //! GRID
 var swiper3 = new Swiper(".mySwiper3", {
