@@ -24,14 +24,14 @@
         <div class="music--container">
             <div class="volume--container">
                 <p id="song-name"><span></span></p>
-                <input type="range" id="progress" min="0" max="100" value="0" />
-                <input type="range" class="volume--slider-input" id="volume-slider" min="0" max="100" value="20" />
+                <input type="range" id="progress" min="0" max="100" value="0" >
+                <input type="range" class="volume--slider-input" id="volume-slider" min="0" max="100" value="20">
                 <canvas id="visualizer" class="music--content-visualizer"></canvas>
             </div>
             <audio id="music--player"></audio>
             <div class="playlist">
                 <button id="togglePlaylist">[O]</button>
-                <button id="toggleAnimation">- Animate</button>
+                <button class="GateOpener" id="toggleAnimation">.Conf</button>
                 <div class="track" data-vinyl="/IMG/Decorate/Disco1.png" data-song="/Music/a seaways -vcr classique.mp3"
                     data-static="/IMG/Decorate/Disco1.png">
                     <img src="/IMG/Decorate/Disco1.png" alt="">
@@ -67,9 +67,9 @@
                     data-static="/IMG/Decorate/disco6.png">
                     <img src="/IMG/Decorate/disco6.png" alt="">
                 </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco2.png" data-song="/Music/Synth.mp3"
-                    data-static="/IMG/Decorate/disco2.png">
-                    <img src="/IMG/Decorate/disco2.png" alt="">
+                <div class="track" data-vinyl="/IMG/Decorate/Disco2.png" data-song="/Music/Synth.mp3"
+                    data-static="/IMG/Decorate/Disco2.png">
+                    <img src="/IMG/Decorate/Disco2.png" alt="">
                 </div>
                 <div class="track" data-vinyl="/IMG/Decorate/disco10.png"
                     data-song="/Music/The Mama's & The Papa's - California Dreamin'.mp3"
@@ -80,19 +80,25 @@
                     data-static="/IMG/Decorate/disco11.png">
                     <img src="/IMG/Decorate/disco11.png" alt="">
                 </div>
-                <div class="track" data-vinyl="/IMG/Decorate/Disco12.png" data-song="/Music/###"
-                    data-static="/IMG/Decorate/Disco12.png">
-                    <img src="/IMG/Decorate/Disco12.png" alt="">
+                <div class="track" data-vinyl="/IMG/Decorate/disco12.png" data-song="/Music/###"
+                    data-static="/IMG/Decorate/disco12.png">
+                    <img src="/IMG/Decorate/disco12.png" alt="">
                 </div>
             </div>
         </div>
         <div class="fondo--img-con">
-            <img class="fondo--img" src="/IMG/back/cosmos_1013439253.jpeg">
-            <img class="fondo--img" src="/IMG/back/cosmos_1793317843.jpeg">
+            <img class="fondo--img" data-red="/IMG/back/cosmos_1013439253.jpeg" data-purple="/IMG/back/cosmos_528599043.jpeg" src="/IMG/back/cosmos_1013439253.jpeg">
+            <img class="fondo--img" data-red="/IMG/back/cosmos_1793317843.jpeg" data-purple="/IMG/back/descarga (4).jpg"src="/IMG/back/cosmos_1793317843.jpeg">
         </div>
         <section class="intro--section">
-            <img class="fondo--img" src="/IMG/back/cosmos_1962622026.jpeg">
-            <h1 class="intro--title"><img src="/IMG/decorate/noname.png"></h1>
+            <div class="GateOpened" id="GatesOfSettings">
+                <button class="botonesTocables" id="AnimateDiscos">+Animate Discos</button>
+                <button class="botonesTocables" id="AnimateRotation">+Animate Cursor</button>
+                <button class="botonesTocables" id="AnimateHover">+Animate Hover</button>
+                <button class="botonesTocables" id="ChangeColor">Theme Red</button>
+            </div>
+            <img class="fondo--img" data-red="/IMG/back/cosmos_1962622026.jpeg" data-purple="/IMG/back/jazz.jpg"src="/IMG/back/cosmos_1962622026.jpeg">
+            <h1 class="intro--title"><img class="intro--title"data-red="/IMG/decorate/noname.png" data-purple="/IMG/Decorate/nonameP.png" src="/IMG/decorate/noname.png" alt="Welcome Everybody"></h1>
             <p class="intro--text">
                 Os presento un viaje por mís capturas de mí vida a través de este
                 mundo digital y bienaventurada atmosfera comfortable
@@ -147,7 +153,7 @@
             </div>
             <div id="overlay" class="overlay">
                 <div class="overlay--content">
-                    <img id="overlayImg" src="" >
+                    <img id="overlayImg" src="">
                     <div class="overlay--description">
                         <aside class="overlay--aside">
                             <p id="overlayText"></p>

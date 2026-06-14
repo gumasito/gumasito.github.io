@@ -21,17 +21,59 @@ html {
     cursor: auto !important;
 }
 
+
+body.theme_red {
+    --bg-main: #110102;
+    --bg-playlist: #2c070c;
+    --playlist-text: #fb6b6b;
+    --bg-author: #2c070c;
+    --border-main: #cc3f41;
+    --color-text: #cc3f41;
+    --text-hover: #552326;
+    --padding-hover: #fb6b6b;
+    --box-shadow: #5f0510;
+    --hr-color: #cc3f4199;
+    --bgc-volume: #5f0510;
+    --gate-buttonH: #eb1722;
+    --gate-buttonBg: #27070d;
+    --gate-buttonC: #49111c;
+    --overlay-color: #110102aa;
+}
+body.theme_purple {
+    --bg-main: #120d18;
+    --bg-playlist: #20152b;
+    --playlist-text: #d6b3ff;
+    --bg-author: #20152b;
+    --border-main: #9d6cff;
+    --color-text: #c9a5ff;
+    --text-hover: #5a3d7c;
+    --padding-hover: #e4d1ff;
+    --box-shadow: #341f52;
+    --hr-color: #9d6cff99;
+    --bgc-volume: #341f52;
+    --gate-buttonH: #f0c3ff;
+    --gate-buttonBg: #29193a;
+    --gate-buttonC: #4a2f66;
+    --overlay-color: #120d18aa;
+}
+
 body {
     padding: 0;
     margin: 0;
-    background-color: #110102;
-    color: #cc3f41;
+    background-color: var(--bg-main);
+    color: var(--color-text);
     display: flex;
     flex-direction: column;
     cursor: none;
     width: 100%;
     min-height: 100vh;
     text-wrap: pretty;
+}
+
+.no-transitions *,
+.no-transitions *::before,
+.no-transitions *::after {
+    transition: none !important;
 }
 
 body.no-scroll {
@@ -45,20 +87,19 @@ body.no-scroll {
     position: fixed;
     width: 50px;
     height: 50px;
-    filter: drop-shadow(0 0 6px #fb6b6b);
     background-image: url("/IMG/Decorate/Disco2.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     pointer-events: none;
     z-index: 99999;
-    filter: drop-shadow(5px 5px 10px #110102);
+    filter: drop-shadow(5px 5px 10px var(--bg-main));
     transform: translate(-50%, -50%);
 }
 
 .header {
     width: 100%;
-    background-color: #110102;
+    background-color: var(--bg-main);
     margin: 0;
     padding: 0;
 }
@@ -72,7 +113,7 @@ body.no-scroll {
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    border: 2px solid #cc3f41;
+    border: 2px solid var(--border-main);
     min-height: 5dvh;
     height: auto;
     font-size: 1.5em;
@@ -87,7 +128,7 @@ body.no-scroll {
 
 .list--item:hover {
     padding: 1%;
-    background-color: #fb6b6b;
+    background-color: var(--padding-hover);
     border-radius: 8px;
 }
 
@@ -98,11 +139,11 @@ body.no-scroll {
 
 .item--link {
     text-decoration: none;
-    color: #cc3f41;
+    color: var(--border-main);
 }
 
 main {
-    background: #110102;
+    background: var(--bg-main);
     flex: 1;
     padding: 0;
     padding-top: 20%;
@@ -123,10 +164,10 @@ main {
     align-items: center;
     flex-direction: column;
     z-index: 1;
-    background-color: #110102;
+    background-color: var(--bg-main);
     border-radius: 5px;
-    border: 1px solid #5f0510;
-    box-shadow: #5f0510 1px 1px 8px .4px;
+    border: 1px solid var(--box-shadow);
+    box-shadow: var(--box-shadow) 1px 1px 8px .4px;
     padding: .3%;
     max-width: 180px;
     box-sizing: content-box;
@@ -158,7 +199,7 @@ main {
 
 #volume-slider {
     appearance: none;
-    background-color: #5f0510;
+    background-color: var(--bgc-volume);
     height: 20px;
     border-radius: 20px;
     --thumb-image: url("");
@@ -173,7 +214,7 @@ main {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: #cc3f41;
+    background-color: var(--border-main);
     background-image: var(--thumb-image), url("/IMG/Decorate/disco9.png");
     background-size: cover;
     background-position: center;
@@ -195,6 +236,7 @@ main {
     width: 200px;
     height: auto;
     max-height: 10vh;
+    position: relative;
 }
 
 #progress {
@@ -214,9 +256,9 @@ main {
     overflow-x: auto;
     overflow-y: hidden;
     box-sizing: border-box;
-    background-color: #49111c;
+    background-color: var(--gate-buttonC);
     background-image: url("/IMG/Back/cosmos_388704365.jpeg");
-    border: 2px solid #cc3f41;
+    border: 2px solid var(--border-main);
     transition: all .3s;
     z-index: 100;
 }
@@ -234,11 +276,11 @@ main {
     height: 30px;
     box-sizing: content-box;
     padding-right: 3%;
-    border: 1px solid #fb6b6b;
+    border: 1px solid var(--playlist-text);
     border-radius: 3px;
     margin: 0;
-    background-color: #2c070c;
-    color: #fb6b6b;
+    background-color: var(--bg-playlist);
+    color: var(--playlist-text);
     font-weight: bolder;
     font-size: 1.3em;
     cursor: pointer;
@@ -256,13 +298,62 @@ main {
 }
 
 .playlist button:active {
-    background-color: #cc3f41;
-    color: #110102
+    background-color: var(--border-main);
+    color: var(--bg-main)
 }
 
-.playlist #toggleAnimation {
-    bottom: 0;
+.playlist .GateOpener {
+    top: 0;
     position: absolute;
+    left: 0;
+    box-sizing:border-box;
+    width:fit-content;
+    margin: 0;
+    flex:1;
+}
+
+.GateOpened {
+    width: 80vw;
+    height: 80dvh;
+    background-color: #fff;
+    position: fixed;
+    left: 10%;
+    top: 10%;
+    opacity: 0;
+    user-select: none;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: .6s all;
+}
+
+.GateOpened.active {
+    opacity: 1;
+    z-index: 3;
+    visibility: visible;
+    scroll-snap-type: none;
+}
+
+.GateOpener.open {
+    z-index: 5;
+    left: 85%;
+}
+
+.GateOpened button {
+    flex: 1;
+    background-color: var(--bg-main);
+    border: 2px solid var(--text-hover);
+    color: var(--gate-buttonC);
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    transition: .5s all;
+}
+
+.GateOpened .botonesTocables.selected {
+    background-color: var(--gate-buttonBg);
+}
+
+.GateOpened button:hover {
+    color: var(--gate-buttonH);
 }
 
 .track img {
@@ -420,7 +511,7 @@ main {
     width: 100vw;
     height: 100dvh;
     inset: 0;
-    background: #110102aa;
+    background: var(--overlay-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -448,7 +539,7 @@ main {
     max-width: 90vw;
     max-height: 90vh;
     object-fit: contain;
-    border: 2px solid #49111c;
+    border: 2px solid var(--gate-buttonC);
     border-radius: 10px;
     transform: scale(.8);
     transition: .3s;
@@ -463,8 +554,8 @@ main {
     font-size: clamp(1rem, 3vw, 3rem);
     left: .4%;
     top: 1%;
-    text-shadow: 3px 3px 0 #2c070c;
-    outline: 4px solid #cc3f41;
+    text-shadow: 3px 3px 0 var(--bg-playlist);
+    outline: 4px solid var(--border-main);
     padding: .6%;
     margin: 0;
     transition: all .3s;
@@ -500,7 +591,7 @@ main {
     align-items: center;
     width: 100%;
     box-sizing: border-box;
-    background-color: #2c070c;
+    background-color: var(--bg-playlist);
     padding: 2%;
     gap: 1px;
     margin-top: 10%;
@@ -508,7 +599,7 @@ main {
 
 .author--pic {
     width: 10%;
-    border: 2px solid #110102;
+    border: 2px solid var(--bg-main);
     display: block;
 }
 
@@ -527,8 +618,8 @@ main {
     margin-top: 10%;
     width: 100%;
     display: flex;
-    border: 1px solid #cc3f41;
-    color: #cc3f41;
+    border: 1px solid var(--border-main);
+    color: var(--border-main);
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -537,7 +628,7 @@ main {
 }
 
 hr {
-    border: 1px solid #cc3f4199;
+    border: 1px solid var(--hr-color);
     border-radius: 8px;
     width: 50%;
 }
@@ -577,8 +668,8 @@ hr {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: #2c070c;
-    border: 1px solid #fb6b6b;
+    background: var(--bg-playlist);
+    border: 1px solid var(--playlist-text);
     color: white;
     padding: 10px 15px;
     border-radius: 6px;
@@ -685,12 +776,8 @@ hr {
     top: 10%;
     right: 20px;
     padding: 12px 20px;
-    background:
-        rgba(73,
-            17,
-            28,
-            .9);
-    border: 2px solid #cc3f41;
+    background:rgba(73, 17, 28, .9);
+    border: 2px solid var(--border-main);
     color: white;
     border-radius:
         12px;

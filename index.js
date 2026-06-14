@@ -25,6 +25,55 @@ if (window.location.pathname.includes("index2.html")) {
         );
     }
     showMusicWarning();
+    //! Swiper
+    //! Abajo CHICO
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+    });
+    //! GRANDE
+    var swiper2 = new Swiper(".mySwiper2", {
+        spaceBetween: 10,
+        thumbs: {
+            swiper: swiper,
+        },
+        loop: true,
+    });
+    //! GRID
+    var swiper3 = new Swiper(".mySwiper3", {
+        slidesPerView: 3,
+        loop: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        grid: {
+            rows: 2,
+        },
+        spaceBetween: 30,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            type: "fraction" //bullets - fraction - progressbar
+        }, scrollbar: {
+            el: ".swiper-scrollbar",
+            draggable: true,
+            direction: "horizontal",
+        },
+        mousewheel: true,
+        //effect:fade - slide - cube - cards - coverflows
+        //centeredSlides: true,
+        /*breakpoints: {
+            640: {
+                slidesPerView: 1,
+            },
+            1024: {
+                slidesPerView: 3,
+            }
+        }*/
+    });
 }
 //! seccion para mirar imagenes mas grandes
 const images = document.querySelectorAll(".intro--img");
@@ -105,14 +154,14 @@ tracks.forEach(track => {
                 player.pause();
                 const img = track.querySelector("img");
                 img.src = track.dataset.static;
-                if (animationRunning) {
+                if (animateDisks) {
                     volumeSlider.classList.remove("rotating");
                     track.classList.remove("active");
                 }
             } else {
                 player.play();
                 const img = track.querySelector("img");
-                if (animationRunning) {
+                if (animateDisks) {
                     volumeSlider.classList.add("rotating");
                     track.classList.add("active");
                 }
@@ -122,7 +171,7 @@ tracks.forEach(track => {
         if (currentTrack) {
             const oldImg = currentTrack.querySelector("img");
             oldImg.src = currentTrack.dataset.static;
-            if(animationRunning)currentTrack.classList.remove("active");
+            if (animateDisks) currentTrack.classList.remove("active");
         }
 
         setupVisualizer();
@@ -135,10 +184,10 @@ tracks.forEach(track => {
         player.volume = .2;
         player.play();
 
-        if (animationRunning) {
+        if (animateDisks) {
             track.classList.add("active");
             volumeSlider.classList.add("rotating");
-        } 
+        }
         currentTrack = track;
         return;
     });
@@ -148,22 +197,11 @@ const progress =
     document.getElementById(
         "progress"
     );
-const songName =
-    document.getElementById(
-        "song-name"
-    );
-const canvas =
-    document.getElementById(
-        "visualizer"
-    );
-canvas.width =
-    canvas.offsetWidth;
-canvas.height =
-    canvas.offsetHeight;
-const ctx =
-    canvas.getContext(
-        "2d"
-    );
+const songName = document.getElementById("song-name");
+const canvas = document.getElementById("visualizer");
+canvas.width = canvas.offsetWidth;
+canvas.height = canvas.offsetHeight;
+const ctx = canvas.getContext("2d");
 
 let audioContext;
 let analyser;
@@ -245,7 +283,7 @@ player.addEventListener("ended", () => {
         const img = currentTrack.querySelector("img");
 
         img.src = currentTrack.dataset.static;
-        if (animationRunning) {
+        if (animateDisks) {
             currentTrack.classList.remove("active");
             volumeSlider.classList.remove("rotating");
         } else { return }
@@ -271,7 +309,7 @@ toggleBtn.addEventListener("click", () => {
 
 let rotation = 0;
 function animate() {
-    if (!animationRunning) {
+    if (!animateCursor) {
         return;
     }
     else {
@@ -298,89 +336,174 @@ document.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
 });
+
+
 //! Animations
-const toggleAnm = document.getElementById("toggleAnimation");
-toggleAnm.addEventListener("click", () => {
-    animationRunning = !animationRunning;
-    updateAnimations();
-    toggleAnm.textContent =
-        animationRunning
-            ? "- Animate"
-            : "+ Animate";
-});
-let animationRunning = false;
+let animateDisks =
+    localStorage.getItem("animateDisks") === "true";
+
+let animateCursor =
+    localStorage.getItem("animateCursor") === "true";
+
+let animateHover =
+    localStorage.getItem("animateHover") === "true";
+
+let changeTheme =
+    localStorage.getItem("changeTheme") === "true";
 cursor.style.display = "none";
 document.body.classList.add("normal-cursor");
 volumeSlider.classList.remove("rotating");
+updateAnimations();
+const toggleAnm = document.getElementById("toggleAnimation");
+const gatesSettings = document.querySelector(".GateOpened");
+
+toggleAnm.addEventListener("click", () => {
+    gatesSettings.classList.toggle("active");
+    toggleAnm.classList.toggle("open");
+});
+
+const configs = document.querySelectorAll(".botonesTocables");
+configs.forEach(button => {
+
+    switch (button.id) {
+
+        case "AnimateDiscos":
+
+            if (animateDisks) {
+                button.classList.add("selected");
+                button.textContent =
+                    "- Animate Discos";
+            }
+
+            break;
+
+        case "AnimateRotation":
+
+            if (animateCursor) {
+                button.classList.add("selected");
+                button.textContent =
+                    "- Animate Cursor";
+            }
+
+            break;
+
+        case "AnimateHover":
+
+            if (animateHover) {
+                button.classList.add("selected");
+                button.textContent =
+                    "- Animate Hover";
+            }
+
+            break;
+
+        case "ChangeColor":
+
+            if (changeTheme) {
+                button.classList.add("selected");
+                button.textContent =
+                    "Theme Purple";
+            }
+
+            break;
+    }
+});
+configs.forEach(button => {
+    button.addEventListener("click", () => {
+        button.classList.toggle("selected");
+        switch (button.id) {
+
+            case "AnimateDiscos":
+                button.textContent = button.classList.contains("selected") ? "- Animate Discos" : "+ Animate Discos";
+                animateDisks = !animateDisks;
+                updateAnimations();
+                localStorage.setItem(
+                    "animateDisks",
+                    animateDisks
+                );
+                break;
+
+            case "AnimateRotation":
+                button.textContent = button.classList.contains("selected") ? "- Animate Cursor" : "+ Animate Cursor";
+                animateCursor = !animateCursor;
+                updateAnimations();
+                localStorage.setItem(
+                    "animateCursor",
+                    animateCursor
+                );
+                break;
+
+            case "AnimateHover":
+                button.textContent = button.classList.contains("selected") ? "- Animate Hover" : "+ Animate Hover";
+                animateHover = !animateHover;
+                updateAnimations();
+                localStorage.setItem(
+                    "animateHover",
+                    animateHover
+                );
+                break;
+
+            case "ChangeColor":
+                changeTheme = !changeTheme;
+                button.textContent = button.classList.contains("selected") ? "Theme Purple" : "Theme Red";
+                localStorage.setItem(
+                    "changeTheme",
+                    changeTheme
+                );
+                updateAnimations();
+                break;
+
+        }
+
+    });
+});
+
 function updateAnimations() {
-    if (!animationRunning) {
-        cursor.style.display = "none";
-        document.body.classList.add("normal-cursor");
+    const backImg = document.querySelectorAll(".fondo--img");
+    const titleImg = document.querySelector("h1 .intro--title");
+    if (!animateDisks) {
         volumeSlider.classList.remove("rotating");
         tracks.forEach(track => {
             track.classList.remove("active");
         })
     } else {
-        cursor.style.display = "block";
-        animate();
-        cursor.classList.add("cursor");
-        document.body.appendChild(cursor);
-        document.body.classList.remove("normal-cursor");
         if (!player.paused) {
             volumeSlider.classList.add("rotating");
             if (currentTrack) {
                 currentTrack.classList.add("active")
             }
         }
+    } if (!animateCursor) {
+        cursor.style.display = "none";
+        document.body.classList.add("normal-cursor");
+    } else {
+        cursor.style.display = "block";
+        animate();
+        cursor.classList.add("cursor");
+        document.body.appendChild(cursor);
+        document.body.classList.remove("normal-cursor");
+    } if (!animateHover) {
+        document.body.classList.add("no-transitions");
+    } else {
+        document.body.classList.remove("no-transitions");
+    } if (!changeTheme) {
+        document.body.classList.add("theme_red");
+        document.body.classList.remove("theme_purple");
+    } else {
+        document.body.classList.remove("theme_red");
+        document.body.classList.add("theme_purple");
     }
-}
-//! Swiper
-//! Abajo CHICO
-var swiper = new Swiper(".mySwiper", {
-    spaceBetween: 10,
-    slidesPerView: 4,
-    freeMode: true,
-    watchSlidesProgress: true,
-});
-//! GRANDE
-var swiper2 = new Swiper(".mySwiper2", {
-    spaceBetween: 10,
-    thumbs: {
-        swiper: swiper,
-    },
-    loop: true,
-});
-//! GRID
-var swiper3 = new Swiper(".mySwiper3", {
-    slidesPerView: 3,
-    loop: true,
-    autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-    },
-    grid: {
-        rows: 2,
-    },
-    spaceBetween: 30,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        type: "fraction" //bullets - fraction - progressbar
-    }, scrollbar: {
-        el: ".swiper-scrollbar",
-        draggable: true,
-        direction: "horizontal",
-    },
-    mousewheel: true,
-    //effect:fade - slide - cube - cards - coverflows
-    //centeredSlides: true,
-    /*breakpoints: {
-        640: {
-            slidesPerView: 1,
-        },
-        1024: {
-            slidesPerView: 3,
+    //! IMAGENES THEMES
+    backImg.forEach(img => {
+
+        if (document.body.classList.contains("theme_purple")) {
+            img.src = img.dataset.purple;
+            titleImg.src = titleImg.dataset.purple;
         }
-    }*/
-});
+        if (document.body.classList.contains("theme_red")) {
+            img.src = img.dataset.red;
+            titleImg.src = titleImg.dataset.red;
+        }
+    });
+}
 
