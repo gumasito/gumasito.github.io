@@ -90,9 +90,7 @@ volumeSlider.addEventListener(
 
     });
 let currentTrack = null;
-
 tracks.forEach(track => {
-
     track.addEventListener("click", () => {
         const img = track.querySelector("img");
         if (img) {
@@ -101,32 +99,30 @@ tracks.forEach(track => {
                 "--thumb-image",
                 `url('${img.src}')`
             );
-
         }
-
         if (currentTrack == track) {
-
             if (!player.paused) {
-                volumeSlider.classList.remove("rotating");
                 player.pause();
                 const img = track.querySelector("img");
                 img.src = track.dataset.static;
-                track.classList.remove("active");
+                if (animationRunning) {
+                    volumeSlider.classList.remove("rotating");
+                    track.classList.remove("active");
+                }
             } else {
                 player.play();
-                volumeSlider.classList.add("rotating");
                 const img = track.querySelector("img");
-                track.classList.add("active");
+                if (animationRunning) {
+                    volumeSlider.classList.add("rotating");
+                    track.classList.add("active");
+                }
             }
             return;
         }
         if (currentTrack) {
-
             const oldImg = currentTrack.querySelector("img");
-
             oldImg.src = currentTrack.dataset.static;
-
-            currentTrack.classList.remove("active");
+            if(animationRunning)currentTrack.classList.remove("active");
         }
 
         setupVisualizer();
@@ -139,10 +135,12 @@ tracks.forEach(track => {
         player.volume = .2;
         player.play();
 
-
-        track.classList.add("active");
-        volumeSlider.classList.add("rotating");
+        if (animationRunning) {
+            track.classList.add("active");
+            volumeSlider.classList.add("rotating");
+        } 
         currentTrack = track;
+        return;
     });
 });
 //! INICIO CONTROLADOR MUSICA
@@ -240,14 +238,17 @@ progress.addEventListener(
     }
 );
 //!FIN CONTROLADOR MUSICA
+
+
 player.addEventListener("ended", () => {
     if (currentTrack) {
         const img = currentTrack.querySelector("img");
 
         img.src = currentTrack.dataset.static;
-
-        currentTrack.classList.remove("active");
-        volumeSlider.classList.remove("rotating");
+        if (animationRunning) {
+            currentTrack.classList.remove("active");
+            volumeSlider.classList.remove("rotating");
+        } else { return }
         progress.value = 0;
 
         songName.textContent =
@@ -266,13 +267,28 @@ toggleBtn.addEventListener("click", () => {
             ? "[X]"
             : "[O]";
 });
+
+
+let rotation = 0;
+function animate() {
+    if (!animationRunning) {
+        return;
+    }
+    else {
+        currentX += (mouseX - currentX) * 0.2;
+        currentY += (mouseY - currentY) * 0.2;
+        rotation += 2;
+        cursor.style.left = currentX + "px";
+        cursor.style.top = currentY + "px";
+        cursor.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
+        requestAnimationFrame(animate);
+    }
+}
+
 //! cursor
 const cursor = document.createElement("div");
 //! slider volume
 const volume_ball = document.querySelector(".volume--slider-input");
-cursor.classList.add("cursor");
-document.body.appendChild(cursor);
-
 let mouseX = 0;
 let mouseY = 0;
 let currentX = 0;
@@ -282,20 +298,42 @@ document.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
 });
-let rotation = 0;
-function animate() {
-    currentX += (mouseX - currentX) * 0.2;
-    currentY += (mouseY - currentY) * 0.2;
-    rotation += 2;
-    cursor.style.left = currentX + "px";
-    cursor.style.top = currentY + "px";
-    cursor.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
-
-    requestAnimationFrame(animate);
+//! Animations
+const toggleAnm = document.getElementById("toggleAnimation");
+toggleAnm.addEventListener("click", () => {
+    animationRunning = !animationRunning;
+    updateAnimations();
+    toggleAnm.textContent =
+        animationRunning
+            ? "- Animate"
+            : "+ Animate";
+});
+let animationRunning = false;
+cursor.style.display = "none";
+document.body.classList.add("normal-cursor");
+volumeSlider.classList.remove("rotating");
+function updateAnimations() {
+    if (!animationRunning) {
+        cursor.style.display = "none";
+        document.body.classList.add("normal-cursor");
+        volumeSlider.classList.remove("rotating");
+        tracks.forEach(track => {
+            track.classList.remove("active");
+        })
+    } else {
+        cursor.style.display = "block";
+        animate();
+        cursor.classList.add("cursor");
+        document.body.appendChild(cursor);
+        document.body.classList.remove("normal-cursor");
+        if (!player.paused) {
+            volumeSlider.classList.add("rotating");
+            if (currentTrack) {
+                currentTrack.classList.add("active")
+            }
+        }
+    }
 }
-
-animate();
-
 //! Swiper
 //! Abajo CHICO
 var swiper = new Swiper(".mySwiper", {
@@ -310,7 +348,7 @@ var swiper2 = new Swiper(".mySwiper2", {
     thumbs: {
         swiper: swiper,
     },
-    loop:true,
+    loop: true,
 });
 //! GRID
 var swiper3 = new Swiper(".mySwiper3", {

@@ -16,6 +16,11 @@ html {
     cursor: none !important;
 }
 
+.normal-cursor,
+.normal-cursor * {
+    cursor: auto !important;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -255,6 +260,11 @@ main {
     color: #110102
 }
 
+.playlist #toggleAnimation {
+    bottom: 0;
+    position: absolute;
+}
+
 .track img {
     width: clamp(70px, 12vw, 140px);
     height: auto;
@@ -443,7 +453,7 @@ main {
     transform: scale(.8);
     transition: .3s;
     display: block;
-    will-change:transform,opacity;
+    will-change: transform, opacity;
 
 }
 
