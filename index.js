@@ -45,10 +45,10 @@ if (window.location.pathname.includes("index2.html")) {
     var swiper3 = new Swiper(".mySwiper3", {
         slidesPerView: 3,
         loop: true,
-        autoplay: {
+        /*autoplay: {
             delay: 4000,
             disableOnInteraction: false,
-        },
+        },*/
         grid: {
             rows: 2,
         },
@@ -99,29 +99,28 @@ const overlay = document.getElementById("overlay");
 const overlayImg = document.getElementById("overlayImg");
 const overlayText = document.getElementById("overlayText");
 
+function getScrollbarWidth() {
+    return window.innerWidth - document.documentElement.clientWidth;
+}
+const scrollbarWidth = getScrollbarWidth();
 images.forEach(img => {
     img.addEventListener("click", () => {
         overlayImg.src = img.src;
-        overlayText.textContent = img.dataset.text;
-        overlay.classList.add("active");
-    });
-});
-
-overlay.addEventListener("click", () => {
-    overlay.classList.remove("active");
-});
-//! seccion para evitar el scroll al mirar una imagen
-images.forEach(img => {
-    img.addEventListener("click", () => {
-        overlayImg.src = img.src;
+        if (window.location.pathname.includes("index.html")) {
+            overlayText.textContent = img.dataset.text;
+        }
         overlay.classList.add("active");
         document.body.classList.add("no-scroll");
+        if (scrollbarWidth > 0) {
+            document.body.style.paddingRight = `${scrollbarWidth}px`;
+        }
     });
 });
 
 overlay.addEventListener("click", () => {
     overlay.classList.remove("active");
     document.body.classList.remove("no-scroll");
+    document.body.style.paddingRight = '';
 });
 //! Seccion para copiar IDs dentro de la pagina
 document.querySelectorAll(".copy-text").forEach(el => {
@@ -246,15 +245,9 @@ function setupVisualizer() {
 function bounce() {
 
     requestAnimationFrame(bounce);
-    if (!analyser)
-        return;
+    if (!analyser) return;
     analyser.getByteFrequencyData(dataArray);
-    ctx.clearRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     let barWidth = canvas.width / bufferLength;
     for (let i = 0; i < bufferLength; i++) {
         const smoothData = new Array(bufferLength).fill(0);
@@ -286,8 +279,6 @@ progress.addEventListener(
     }
 );
 //!FIN CONTROLADOR MUSICA
-
-
 player.addEventListener("ended", () => {
     if (currentTrack) {
         const img = currentTrack.querySelector("img");
@@ -311,10 +302,7 @@ const volumeBox = document.querySelector(".volume--container");
 toggleBtn.addEventListener("click", () => {
     playlist.classList.toggle("open");
     volumeBox.classList.toggle("open");
-    toggleBtn.textContent =
-        playlist.classList.contains("open")
-            ? "[X]"
-            : "[O]";
+    toggleBtn.textContent = playlist.classList.contains("open") ? "[X]" : "[O]";
 });
 
 
