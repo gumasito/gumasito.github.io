@@ -75,6 +75,24 @@ if (window.location.pathname.includes("index2.html")) {
         }*/
     });
 }
+//! Cargar datos de canción
+const savedTrackIndex = localStorage.getItem("trackIndex");
+const savedTime = localStorage.getItem("songTime");
+const savedPaused = localStorage.getItem("songPaused");
+
+const progress = document.getElementById("progress");
+const songName = document.getElementById("song-name");
+const canvas = document.getElementById("visualizer");
+
+canvas.width = canvas.offsetWidth;
+canvas.height = canvas.offsetHeight;
+const ctx = canvas.getContext("2d");
+
+let audioContext;
+let analyser;
+let dataArray;
+let bufferLength;
+
 //! seccion para mirar imagenes mas grandes
 const images = document.querySelectorAll(".intro--img");
 const overlay = document.getElementById("overlay");
@@ -124,24 +142,40 @@ document.querySelectorAll(".copy-text").forEach(el => {
 //! Musica
 const tracks = document.querySelectorAll(".track");
 const player = document.getElementById("music--player");
+
+
 //! volumen slider control
-const volumeSlider =
-    document.getElementById(
-        "volume-slider"
-    );
+const volumeSlider = document.getElementById("volume-slider");
 
-volumeSlider.addEventListener(
-    "input",
-    () => {
-
-        player.volume =
-            volumeSlider.value / 100;
-
-    });
+volumeSlider.addEventListener("input", () => {
+    player.volume = volumeSlider.value / 100;
+});
 let currentTrack = null;
-tracks.forEach(track => {
+if (savedTrackIndex !== null) {
+    const track = tracks[savedTrackIndex];
+    currentTrack = track;
+    player.src = track.dataset.song;
+    songName.textContent =
+        track.dataset.song
+            .split("/")
+            .pop()
+            .replace(".mp3", "");
+    player.onloadedmetadata = () => {
+        if (savedTime) {
+            player.currentTime = Number(savedTime);
+        } if (savedPaused === "false") {
+            player.play();
+        } if (savedPaused === "false" && animateDisks) {
+            track.classList.add("active");
+            volumeSlider.classList.add("rotating");
+        }
+        player.onloadedmetadata = null;
+    }
+}
+tracks.forEach((track, index) => {
     track.addEventListener("click", () => {
         const img = track.querySelector("img");
+        localStorage.setItem("trackIndex", index);
         if (img) {
             cursor.style.backgroundImage = `url('${img.src}')`;
             volume_ball.style.setProperty(
@@ -152,6 +186,7 @@ tracks.forEach(track => {
         if (currentTrack == track) {
             if (!player.paused) {
                 player.pause();
+                localStorage.setItem("songPaused", true);
                 const img = track.querySelector("img");
                 img.src = track.dataset.static;
                 if (animateDisks) {
@@ -160,6 +195,7 @@ tracks.forEach(track => {
                 }
             } else {
                 player.play();
+                localStorage.setItem("songPaused", false);
                 const img = track.querySelector("img");
                 if (animateDisks) {
                     volumeSlider.classList.add("rotating");
@@ -181,7 +217,9 @@ tracks.forEach(track => {
                 .split("/")
                 .pop()
                 .replace("mp3", "");
-        player.volume = .2;
+        progress.value = 0;
+        localStorage.setItem("songTime", 0);
+        player.volume = .10;
         player.play();
 
         if (animateDisks) {
@@ -193,21 +231,6 @@ tracks.forEach(track => {
     });
 });
 //! INICIO CONTROLADOR MUSICA
-const progress =
-    document.getElementById(
-        "progress"
-    );
-const songName = document.getElementById("song-name");
-const canvas = document.getElementById("visualizer");
-canvas.width = canvas.offsetWidth;
-canvas.height = canvas.offsetHeight;
-const ctx = canvas.getContext("2d");
-
-let audioContext;
-let analyser;
-let dataArray;
-let bufferLength;
-
 function setupVisualizer() {
     if (audioContext) return;
     audioContext = new AudioContext();
@@ -222,34 +245,20 @@ function setupVisualizer() {
 
 function bounce() {
 
-    requestAnimationFrame(
-        bounce
-    );
+    requestAnimationFrame(bounce);
     if (!analyser)
         return;
-    analyser.getByteFrequencyData(
-        dataArray
-    );
+    analyser.getByteFrequencyData(dataArray);
     ctx.clearRect(
         0,
         0,
         canvas.width,
         canvas.height
     );
-    let barWidth =
-        canvas.width /
-        bufferLength;
-    for (
-        let i = 0;
-        i < bufferLength;
-        i++
-    ) {
-        const smoothData =
-            new Array(
-                bufferLength
-            ).fill(0);
-        smoothData[i] +=
-            (dataArray[i] - smoothData[i]) * 0.2;
+    let barWidth = canvas.width / bufferLength;
+    for (let i = 0; i < bufferLength; i++) {
+        const smoothData = new Array(bufferLength).fill(0);
+        smoothData[i] += (dataArray[i] - smoothData[i]) * 0.2;
         let height = smoothData[i];
         ctx.fillStyle = `hsl(${height},100%,50%)`;
         ctx.fillRect(
@@ -266,6 +275,7 @@ player.addEventListener(
     () => {
         if (player.duration) {
             progress.value = (player.currentTime / player.duration) * 100;
+            localStorage.setItem("songTime", player.currentTime);
         }
     }
 );
@@ -281,17 +291,18 @@ progress.addEventListener(
 player.addEventListener("ended", () => {
     if (currentTrack) {
         const img = currentTrack.querySelector("img");
-
         img.src = currentTrack.dataset.static;
         if (animateDisks) {
             currentTrack.classList.remove("active");
             volumeSlider.classList.remove("rotating");
-        } else { return }
+        }
         progress.value = 0;
 
-        songName.textContent =
-            "No song";
+        songName.textContent = "No song";
         currentTrack = null;
+        localStorage.removeItem("trackIndex");
+        localStorage.removeItem("songTime");
+        localStorage.removeItem("songPaused");
     }
 });
 const playlist = document.querySelector(".playlist");

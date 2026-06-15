@@ -123,6 +123,7 @@ body.no-scroll {
 .list--item {
     transition: all .4s;
     text-decoration: none;
+    user-select:none;
 
 }
 
@@ -135,6 +136,8 @@ body.no-scroll {
 .list--item:hover .item--link {
     color: #552326;
     font-weight: bold;
+    cursor:pointer;
+    user-select:none;
 }
 
 .item--link {
@@ -262,7 +265,12 @@ main {
     transition: all .3s;
     z-index: 100;
 }
-
+.playlist *{
+    pointer-events:none;
+}
+.playlist.open *{
+    pointer-events:all;
+}
 .track {
     flex: 0 0 auto;
     cursor: pointer;
@@ -286,6 +294,7 @@ main {
     cursor: pointer;
     user-select: none;
     transition: all .2s;
+    pointer-events:all;
 }
 
 .playlist button:hover {
@@ -296,7 +305,6 @@ main {
     right: 0;
     z-index: 3;
 }
-
 .playlist button:active {
     background-color: var(--border-main);
     color: var(--bg-main)
@@ -310,6 +318,10 @@ main {
     width:fit-content;
     margin: 0;
     flex:1;
+    pointer-events:none;
+}
+.playlist.open .GateOpener{
+    pointer-events:all;
 }
 
 .GateOpened {
@@ -485,24 +497,23 @@ main {
     transform: scale(1.1);
 }
 
+.item:nth-child(2) {
+    grid-column: span 2
+}
 .item:nth-child(6) {
     grid-column: span 2;
 }
 
-.item:nth-child(2) {
-    grid-column: span 2
-}
 
 .item:nth-child(7) {
     grid-row: span 2;
 }
 
 .item:nth-child(13) {
-    grid-row: span 2;
-}
-
-.item:last-child {
     grid-column: span 2;
+}
+.item:nth-child(21){
+    grid-column:span 2;
 }
 
 .overlay {
