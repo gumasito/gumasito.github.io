@@ -75,6 +75,45 @@ if (window.location.pathname.includes("index2.html")) {
         }*/
     });
 }
+if (window.location.pathname.includes("index3.html")) {
+    var swiper = new Swiper(".carrusel-flores", {
+        slidesPerView: 4,
+        loop: true,
+        /*autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },*/
+        grid: {
+            rows: 2,
+        },
+        spaceBetween: 5,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            type: "fraction" //bullets - fraction - progressbar
+        }
+    })
+
+    var swiper2 = new Swiper(".carrusel-flores2", {
+        slidesPerView: 4,
+        loop: true,
+        /*autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },*/
+        grid: {
+            rows: 2,
+        },
+        spaceBetween: 10,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            type: "fraction" //bullets - fraction - progressbar
+        }
+    })
+}
+
+
 //! Cargar datos de canción
 const savedTrackIndex = localStorage.getItem("trackIndex");
 const savedTime = localStorage.getItem("songTime");
