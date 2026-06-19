@@ -879,11 +879,13 @@ hr {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding:1.2%;
 }
 
 .item--nature {
     overflow: hidden;
     width: 100%;
+    height:100%;
 }
 
 .item--nature .intro--img {
@@ -903,9 +905,8 @@ hr {
     background-color: var(--bg-playlist);
     width: 100%;
     height: auto;
-    padding: 3% 0;
     box-sizing: content-box;
-    margin-top: 50dvh;
+    margin: 20dvh 0;
     overflow-x: hidden;
 }
 
@@ -916,9 +917,11 @@ hr {
     margin: 4% 0;
 }
 .flower-container-item:last-child{
-    margin-bottom:0;
+    margin-bottom:10%;
 }
-
+.flower-container-item-title{
+    font-size:1.8rem;
+}
 /** mySwiper **/
 .carrousel-flores {
     height: 800px;

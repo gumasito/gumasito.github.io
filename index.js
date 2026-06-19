@@ -86,7 +86,7 @@ if (window.location.pathname.includes("index3.html")) {
         grid: {
             rows: 2,
         },
-        spaceBetween: 5,
+        spaceBetween: 10,
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
