@@ -863,7 +863,6 @@ hr {
     object-fit: cover;
     transition: transform .3s ease;
     cursor: pointer;
-    user-select: none;
     background-color: var(--bg-playlist);
     padding-top: 1%;
     box-sizing:border-box;
@@ -891,6 +890,7 @@ hr {
 .item--nature .intro--img {
     width: 100%;
     object-fit: cover;
+    user-select:none;
     border: 3px solid var(--border-main);
 }
 
