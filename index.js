@@ -544,3 +544,14 @@ function updateAnimations() {
     });
 }
 
+function setupImageFadeIn() {
+    const allImgs = document.querySelectorAll(".intro--img");
+    allImgs.forEach(img => {
+        if (img.complete) {
+            img.classList.add("loaded");
+        } else {
+            img.addEventListener("load", () => img.classList.add("loaded"));
+        }
+    });
+}
+setupImageFadeIn();
