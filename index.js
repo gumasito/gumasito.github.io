@@ -77,40 +77,39 @@ if (window.location.pathname.includes("index2.html")) {
 }
 if (window.location.pathname.includes("index3.html")) {
     var swiper = new Swiper(".carrusel-flores", {
-        slidesPerView: 4,
+        slidesPerView: 1,
         loop: true,
-        /*autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },*/
-        grid: {
-            rows: 2,
-        },
+        grid: { rows: 1 },  // en mobile, una fila
         spaceBetween: 10,
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
-            type: "fraction" //bullets - fraction - progressbar
+            type: "fraction"
+        },
+        breakpoints: {
+            480: { slidesPerView: 2, grid: { rows: 1 } },
+            768: { slidesPerView: 3, grid: { rows: 2 } },
+            1024: { slidesPerView: 4, grid: { rows: 2 } },
         }
-    })
+    });
 
     var swiper2 = new Swiper(".carrusel-flores2", {
-        slidesPerView: 4,
+        slidesPerView: 2,
         loop: true,
         /*autoplay: {
             delay: 4000,
             disableOnInteraction: false,
         },*/
-        grid: {
-            rows: 2,
-        },
         spaceBetween: 10,
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
             type: "fraction" //bullets - fraction - progressbar
+        },
+        breakpoints: {
+            768 : {slidesPerView: 2},
         }
-    })
+    });
 }
 
 
@@ -141,9 +140,9 @@ const overlayText = document.getElementById("overlayText");
 function getScrollbarWidth() {
     return window.innerWidth - document.documentElement.clientWidth;
 }
-const scrollbarWidth = getScrollbarWidth();
 images.forEach(img => {
     img.addEventListener("click", () => {
+        const scrollbarWidth = getScrollbarWidth();
         overlayImg.src = img.src;
         if (window.location.pathname.includes("index.html")) {
             overlayText.textContent = img.dataset.text;

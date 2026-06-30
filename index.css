@@ -151,7 +151,7 @@ main {
     background: var(--bg-main);
     flex: 1;
     padding: 0;
-    padding-top: 20%;
+    padding-top: clamp(80px, 15vh, 250px);
     text-align: center;
     position: relative;
 }
@@ -528,9 +528,6 @@ main {
 .overlay {
     position: fixed;
     inset: 0;
-    width: 100vw;
-    height: 100dvh;
-    inset: 0;
     background: var(--overlay-color);
     display: flex;
     justify-content: center;
@@ -544,8 +541,10 @@ main {
 
 .overlay--content {
     position: relative;
-    display: inline-block;
-    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 95vw;
 }
 
 .overlay.active {
@@ -556,8 +555,10 @@ main {
 }
 
 .overlay img {
-    max-width: 90vw;
-    max-height: 90vh;
+    max-width: 95vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
     object-fit: contain;
     border: 2px solid var(--gate-buttonC);
     border-radius: 10px;
@@ -569,19 +570,32 @@ main {
 }
 
 .overlay p {
-    width: auto;
     position: absolute;
-    font-size: clamp(1rem, 3vw, 3rem);
     left: .4%;
     top: 1%;
+    font-size: clamp(0.75rem, 2.5vw, 2rem);
+    /* el max anterior de 3rem era demasiado */
     text-shadow: 3px 3px 0 var(--bg-playlist);
     outline: 4px solid var(--border-main);
     padding: .6%;
     margin: 0;
-    transition: all .3s;
-    box-sizing: content-box;
     border-radius: 8px;
-    padding-left: 0;
+    box-sizing: border-box;
+    width: fit-content;
+    max-width: 90%;
+    /* evita que desborde el contenedor */
+    word-break: pretty;
+}
+
+@media (max-width: 500px) {
+    .overlay p {
+        position: static;
+        margin-top: 6px;
+        font-size: 0.85rem;
+        width: 95%;
+        text-align: left;
+        padding: 4px 8px;
+    }
 }
 
 .overlay.active img {
@@ -758,7 +772,7 @@ hr {
 }
 
 .mySwiper3 {
-    height: 90dvh;
+    height: 100dvh;
     width: 80%;
     box-sizing: border-box;
     overflow-y: hidden;
@@ -785,6 +799,10 @@ hr {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.mySwiper3 .swiper-slide3 aside {
+    font-size: clamp(.9rem, 3.3vw, 1.2em);
 }
 
 /*!==================================*/
@@ -865,32 +883,64 @@ hr {
     cursor: pointer;
     background-color: var(--bg-playlist);
     padding-top: 1%;
-    box-sizing:border-box;
-    overflow:hidden;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+@media (max-width: 900px) {
+
+    .container-nature .item {
+        flex-direction: column;
+        height: auto;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .item--nature {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+    }
+
 }
 
 .container-nature .item {
     flex: 1;
     display: flex;
     border: 2px dashed var(--bgc-volume);
-    height: 40dvh;
+    height: auto;
     margin-bottom: 1%;
     flex-direction: row;
     justify-content: center;
+    align-items: stretch;
+    min-height: 280px;
+    padding: 1.2%;
+    box-shadow: var(--bgc-volume) 1px 1px 5px 1px;
+}
+
+.container-nature .item aside {
+    flex: 1;
+    min-width: 0;
+    display: flex;
     align-items: center;
-    padding:1.2%;
+    text-shadow: var(--text-hover) 1px 1px 5px;
+    font-size: clamp(.9rem, 1vw + .5rem, 1.1rem);
+    line-height: 1.6;
+    max-width: 65ch;
 }
 
 .item--nature {
     overflow: hidden;
     width: 100%;
-    height:100%;
+    flex: 0 0 clamp(200px, 38%, 480px);
+    aspect-ratio: unset;
+    min-height: 220px;
 }
 
 .item--nature .intro--img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
-    user-select:none;
+    user-select: none;
     border: 3px solid var(--border-main);
 }
 
@@ -916,16 +966,19 @@ hr {
     overflow: hidden;
     margin: 4% 0;
 }
-.flower-container-item:last-child{
-    margin-bottom:10%;
+
+.flower-container-item:last-child {
+    margin-bottom: 10%;
 }
-.flower-container-item-title{
-    font-size:1.8rem;
+
+.flower-container-item-title {
+    font-size: 1.8rem;
 }
+
 /** mySwiper **/
-.carrousel-flores {
-    height: 800px;
-    width: 100%;
+.carrusel-flores {
+    width: min(90%, 1200px);
+    aspect-ratio: 3 / 2;
     overflow-y: hidden;
 }
 
@@ -933,7 +986,7 @@ hr {
     font-size: 1.1rem;
     /* Center slide text vertically */
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     object-fit: cover;
     text-align: center;
@@ -950,9 +1003,9 @@ hr {
 }
 
 /*Carrousel abajo*/
-.carrousel-flores2 {
+.carrusel-flores2 {
     height: 500px;
-    width: 100%;
+    width: 90%;
     overflow-y: hidden;
 }
 
@@ -974,4 +1027,201 @@ hr {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.flower-container-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    width: 90%;
+    margin: auto;
+}
+
+.flower-container-grid-item {
+    overflow: hidden;
+}
+
+.flower-container-grid .flower-container-grid-item:hover .intro--img {
+    transform: scale(1.1);
+}
+
+.flower-container-grid-item:first-child {
+    grid-row: span 2;
+}
+
+.flower-container-grid-item:nth-child(2) {
+    grid-column: span 1;
+}
+
+.flower-container-grid-item:nth-child(3) {
+    grid-row: span 2;
+}
+
+.flower-container-grid-item:last-child {
+    grid-column: span 3;
+}
+
+.flower-container-grid-achicoria {
+    display: grid;
+    gap: 1px;
+    width: 90%;
+    height: auto;
+    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.flower-container-grid-achicoria-item:first-child {
+    grid-column: span 1;
+}
+
+.flower-container-grid-achicoria-item:nth-child(2) {
+    grid-row: span 2;
+}
+
+.flower-container-grid-palmera-item:first-child {
+    grid-row: span 3;
+}
+
+.flower-container-grid-palmera-item:nth-child(2) {
+    grid-column: span 2;
+}
+
+.flower-container-grid-palmera-item:last-child {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.flower-container-grid-RosaRara-item:first-child {
+    grid-column: span 2;
+}
+
+.flower-container-grid-RosaRara-item:last-child {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+@media (max-width: 900px) {
+
+    /* Grids de flores: de 3 columnas a 2 */
+    .flower-container-grid {
+        grid-template-columns: repeat(2, 1fr);
+        width: 95%;
+    }
+
+    /* Grid en Urban*/
+    .mySwiper3 {
+        aspect-ratio: 4/3;
+        height: auto;
+    }
+
+    /* Resetear spans que rompen el layout */
+    .flower-container-grid-item,
+    .flower-container-grid-item:first-child,
+    .flower-container-grid-item:nth-child(2),
+    .flower-container-grid-item:nth-child(3),
+    .flower-container-grid-item:last-child {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+
+    /* Achicoria: el height fijo de 900px es el problema */
+    .flower-container-grid-achicoria {
+        height: auto;
+        grid-template-columns: 1fr;
+    }
+
+    .flower-container-grid-achicoria-item:nth-child(2) {
+        grid-row: span 1 !important;
+    }
+
+    /* Palmera */
+    .flower-container-grid-palmera-item:first-child,
+    .flower-container-grid-palmera-item:nth-child(2),
+    .flower-container-grid-palmera-item:last-child {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+
+    /* RosaRara */
+    .flower-container-grid-RosaRara-item:first-child {
+        grid-column: span 1 !important;
+    }
+
+    /* Altura de carruseles: 500px fijo → dinámico */
+    .carrusel-flores {
+        aspect-ratio: 4 / 3;
+        height: auto;
+    }
+
+    .carrusel-flores2 {
+        height: clamp(200px, 55vw, 500px);
+    }
+}
+
+@media (max-width: 500px) {
+    .flower-container-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav--ul {
+        font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+        flex-wrap: wrap;
+        gap: 4px;
+        padding: 2%;
+    }
+
+    .intro--section>.intro--text {
+        font-size: clamp(1rem, 3.5vw, 1.4em);
+        width: 90%;
+    }
+
+    .flower-container-item-title {
+        font-size: clamp(1.1rem, 4vw, 1.8rem);
+    }
+
+    .container-nature .item {
+        flex-direction: column !important;
+        /* siempre columna, sin importar el orden del HTML */
+        min-height: unset;
+        gap: 0;
+        padding: 0;
+        padding-bottom: 1rem;
+    }
+
+    /* Imagen al tope del card, ancho completo */
+    .item--nature {
+        flex: none;
+        width: 100%;
+        min-height: unset;
+        aspect-ratio: 16 / 9;
+        order: -1;
+        /* siempre primero, aunque en el HTML esté después */
+    }
+
+    .container-nature .item aside {
+        flex: none;
+        width: 100%;
+        padding: 1rem 1.2rem;
+        text-align: center;
+    }
+
+    /* El hover de expansión no tiene sentido en touch */
+    .container-nature .item:hover .item--nature {
+        flex-basis: unset;
+    }
+
+    .container-nature .item aside {
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
+    }
+
+    .mySwiper3 .swiper-slide3 aside {
+        font-size: clamp(.9rem, 3.2vw, 1.1em);
+        word-break: pretty;
+    }
+
+    .swiper-pagination {
+        opacity: 0;
+    }
 }
