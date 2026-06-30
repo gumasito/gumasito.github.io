@@ -88,26 +88,25 @@ if (window.location.pathname.includes("index3.html")) {
         },
         breakpoints: {
             480: { slidesPerView: 2, grid: { rows: 1 } },
-            768: { slidesPerView: 3, grid: { rows: 2 } },
-            1024: { slidesPerView: 4, grid: { rows: 2 } },
+            768: { slidesPerView: 3, grid: { rows: 1 } },
+            1024: { slidesPerView: 4, grid: { rows: 1 } },
         }
     });
 
     var swiper2 = new Swiper(".carrusel-flores2", {
-        slidesPerView: 2,
+        slidesPerView: 1,
         loop: true,
-        /*autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },*/
+        grid: { rows: 1 },  // en mobile, una fila
         spaceBetween: 10,
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
-            type: "fraction" //bullets - fraction - progressbar
+            type: "fraction"
         },
         breakpoints: {
-            768 : {slidesPerView: 2},
+            480: { slidesPerView: 2, grid: { rows: 1 } },
+            768: { slidesPerView: 3, grid: { rows: 1 } },
+            1024: { slidesPerView: 4, grid: { rows: 1 } },
         }
     });
 }
