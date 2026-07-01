@@ -436,7 +436,9 @@ main {
     left: 0;
     top: 10%;
 }
-
+.intro--section .fondo--img--nature{
+    top:1.7%;
+}
 /*
 .fondo--img:nth-child(4) {
     width: 12%;
@@ -785,14 +787,20 @@ hr {
     height: 100%;
     object-fit: cover;
 }
+.swiper3--container{
+    width:90%;
+    background-color: var(--bg-playlist);
+    margin:auto;
+    padding:3%;
+    margin-top:40dvh;
+    margin-bottom:20dvh;
+}
 
 .mySwiper3 {
     height: 100dvh;
-    width: 80%;
+    width: 90%;
     box-sizing: border-box;
     overflow-y: hidden;
-    margin-top: 15%;
-    padding-bottom: 5% !important;
 }
 
 
