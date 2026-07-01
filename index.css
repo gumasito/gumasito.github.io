@@ -932,13 +932,29 @@ hr {
     box-shadow: var(--bgc-volume) 1px 1px 5px 1px;
 }
 
+.container-nature .item:last-child {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.container-nature .item:last-child aside {
+    grid-column: span 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-nature .item:last-child aside p {
+    font-size: 1;
+    font-size: clamp(.9rem, 1.5vw, 1.3rem);
+}
+
 .container-nature .item aside {
     flex: 1;
     min-width: 0;
     display: flex;
     align-items: center;
     text-shadow: var(--text-hover) 1px 1px 5px;
-    font-family:"Story Script";
+    font-family: "Story Script";
     font-size: clamp(.9rem, 1vw + .5rem, 1.1rem);
     line-height: 1.6;
     max-width: 65ch;
@@ -952,6 +968,42 @@ hr {
     min-height: 220px;
 }
 
+.item--nature--pino {
+    height: 40dvh;
+}
+
+.item--nature--varios {
+    overflow: hidden;
+    aspect-ratio: unset;
+    min-height: 220px;
+}
+.container-nature .item:last-child .item--nature--varios:nth-child(2) {
+    grid-column: span 2;
+}
+.container-nature .item:last-child .item--nature--varios:nth-child(3){
+    grid-row:span 2;
+}
+.container-nature .item:last-child .item--nature--varios:nth-child(4),.container-nature .item:last-child .item--nature--varios:nth-child(5){
+    grid-column: span 2;
+}
+.container-nature .item:last-child .item--nature--varios:nth-child(13){
+    object-position: 0% 50%;
+    grid-column: span 2;
+    grid-row: span 2;
+}
+.container-nature .item:last-child .item--nature--varios:nth-child(14){
+    grid-column: span 3;
+    grid-row: span 2;
+}
+.container-nature .item:last-child .item--nature--varios:nth-child(15){
+    grid-row:span 2;
+}
+.container-nature .item:last-child .item--nature--varios:nth-child(22){
+    grid-column: span 3;
+}
+.container-nature .item:last-child .item--nature--varios:last-child{
+    grid-row:span 1;
+}
 .item--nature .intro--img {
     width: 100%;
     height: 100%;
@@ -982,14 +1034,17 @@ hr {
     overflow: hidden;
     margin: 4% 0;
 }
-.flower-container-item .carrusel-flores{
+
+.flower-container-item .carrusel-flores {
     margin-bottom: 2%;
 }
+
 .flower-container-item:last-child {
     margin-bottom: 10%;
 }
 
-.flower-container-item-title, .container-nature .item aside h2 {
+.flower-container-item-title,
+.container-nature .item aside h2 {
     font-size: 1.8rem;
     text-decoration: underline;
 }
@@ -1081,6 +1136,7 @@ hr {
 .flower-container-grid-item:last-child {
     grid-column: span 3;
 }
+
 .flower-container-grid-achicoria {
     display: grid;
     gap: 1px;
@@ -1097,22 +1153,28 @@ hr {
 .flower-container-grid-achicoria-item:nth-child(2) {
     grid-row: span 2;
 }
-.flower-container-grid-cactus{
-    grid-template-columns: repeat(4,1fr);
+
+.flower-container-grid-cactus {
+    grid-template-columns: repeat(4, 1fr);
 }
-.flower-container-grid-cactus-item:first-child{
+
+.flower-container-grid-cactus-item:first-child {
     grid-column: span 3;
 }
-.flower-container-grid-cactus-item:nth-child(2){
+
+.flower-container-grid-cactus-item:nth-child(2) {
     grid-row: span 2;
 }
-.flower-container-grid-cactus-item:nth-child(3){
+
+.flower-container-grid-cactus-item:nth-child(3) {
     grid-column: span 2;
 }
-.flower-container-grid-cactus-item:last-child{
+
+.flower-container-grid-cactus-item:last-child {
     grid-column: span 2;
     grid-row: span 2;
 }
+
 .flower-container-grid-palmera-item:first-child {
     grid-row: span 3;
 }
@@ -1120,12 +1182,15 @@ hr {
 .flower-container-grid-palmera-item:nth-child(2) {
     grid-column: span 2;
 }
-.flower-container-grid-palmera-item:nth-child(3){
+
+.flower-container-grid-palmera-item:nth-child(3) {
     grid-row: span 2;
 }
-.flower-container-grid-palmera-item:nth-child(4){
+
+.flower-container-grid-palmera-item:nth-child(4) {
     grid-row: span 2;
 }
+
 .flower-container-grid-palmera-item:last-child {
     grid-column: span 2;
 }
@@ -1138,35 +1203,46 @@ hr {
     grid-column: span 1;
     grid-row: span 1;
 }
-.flower-container-grid-limonero-item:first-child{
+
+.flower-container-grid-limonero-item:first-child {
     grid-column: span 3;
 }
-.flower-container-grid-limonero-item:last-child{
-    grid-column:span 1;
+
+.flower-container-grid-limonero-item:last-child {
+    grid-column: span 1;
     grid-row: span 1;
 }
-.flower-container-grid-menta-item:first-child{
-    grid-row:span 3;
+
+.flower-container-grid-menta-item:first-child {
+    grid-row: span 3;
 }
-.flower-container-grid-menta-item:nth-child(2){
+
+.flower-container-grid-menta-item:nth-child(2) {
     grid-column: span 2;
 }
-.flower-container-grid-menta-item:last-child{
-    grid-column:span 2;
-    grid-row:span 2;
-}
-.flower-container-grid-romero{
-    grid-template-columns: repeat(4, 1fr);
-}
-.flower-container-grid-romero-item:first-child{
-    grid-column: span 3;
-}
-.flower-container-grid-romero-item:nth-child(2){
+
+.flower-container-grid-menta-item:last-child {
+    grid-column: span 2;
     grid-row: span 2;
 }
-.flower-container-grid-romero-item:nth-child(3),.flower-container-grid-romero-item:last-child{
-    grid-column:span 2;
+
+.flower-container-grid-romero {
+    grid-template-columns: repeat(4, 1fr);
 }
+
+.flower-container-grid-romero-item:first-child {
+    grid-column: span 3;
+}
+
+.flower-container-grid-romero-item:nth-child(2) {
+    grid-row: span 2;
+}
+
+.flower-container-grid-romero-item:nth-child(3),
+.flower-container-grid-romero-item:last-child {
+    grid-column: span 2;
+}
+
 @media (max-width: 900px) {
 
     /* Grids de flores: de 3 columnas a 2 */
