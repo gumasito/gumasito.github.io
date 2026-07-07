@@ -5,146 +5,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pictures :star:</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Vast+Shadow&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <header class="header">
-        <nav class="header--nav">
-            <ul class="nav--ul">
-                <li class="list--item">
-                    <a href="" class="item--link"></a>
-                </li>
-                <li class="list--item"><a href="" class="item--link"></a></li>
-                <li class="list--item"><a href="" class="item--link"></a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="music--container">
-            <div class="volume--container">
-                <p id="song-name"><span></span></p>
-                <input type="range" id="progress" min="0" max="100" value="0">
-                <input type="range" class="volume--slider-input" id="volume-slider" min="0" max="100" value="10">
-                <canvas id="visualizer" class="music--content-visualizer"></canvas>
-            </div>
-            <audio id="music--player"></audio>
-            <div class="playlist">
-                <button id="togglePlaylist">[O]</button>
-                <button class="GateOpener" id="toggleAnimation">.Conf</button>
-                <div class="track" data-vinyl="/IMG/Decorate/Disco1.png" data-song="/Music/a seaways -vcr classique.mp3"
-                    data-static="/IMG/Decorate/Disco1.png">
-                    <img src="/IMG/Decorate/Disco1.png" alt="">
-                </div>
-
-                <div class="track" data-vinyl="/IMG/Decorate/disco9.png"
-                    data-song="/Music/daydream - stella, pedram.mp3" data-static="/IMG/Decorate/disco9.png">
-                    <img src="/IMG/Decorate/disco9.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/nonamqqqe.png"
-                    data-song="/Music/jazz is for ordinary people.mp3" data-static="/IMG/Decorate/nonamqqqe.png">
-                    <img src="/IMG/Decorate/nonamqqqe.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco5.png" data-song="/Music/Side B_ Apéritif.mp3"
-                    data-static="/IMG/Decorate/disco5.png">
-                    <img src="/IMG/Decorate/disco5.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco7.png" data-song="/Music/Wicked Game.mp3"
-                    data-static="/IMG/Decorate/disco7.png">
-                    <img src="/IMG/Decorate/disco7.png" alt="">
-                </div>
-
-                <div class="track" data-vinyl="/IMG/Decorate/Disco3.png"
-                    data-song="/Music/Plage Noir & ELLIBOI - Neon Whispers.mp3" data-static="/IMG/Decorate/Disco3.png">
-                    <img src="/IMG/Decorate/Disco3.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco8.png" data-song="/Music/Villa Palmera.mp3"
-                    data-static="/IMG/Decorate/disco8.png">
-                    <img src="/IMG/Decorate/disco8.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco6.png"
-                    data-song="/Music/Gene Harris - Losalamitos (latin funk love song).mp3"
-                    data-static="/IMG/Decorate/disco6.png">
-                    <img src="/IMG/Decorate/disco6.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/Disco2.png" data-song="/Music/Synth.mp3"
-                    data-static="/IMG/Decorate/Disco2.png">
-                    <img src="/IMG/Decorate/Disco2.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco10.png"
-                    data-song="/Music/The Mama's & The Papa's - California Dreamin'.mp3"
-                    data-static="/IMG/Decorate/disco10.png">
-                    <img src="/IMG/Decorate/disco10.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco11.png"
-                    data-song="/Music/Sade - Never As Good As The First Time.mp3"
-                    data-static="/IMG/Decorate/disco11.png">
-                    <img src="/IMG/Decorate/disco11.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco12.png" data-song="/Music/Double - Devils Ball.mp3"
-                    data-static="/IMG/Decorate/disco12.png">
-                    <img src="/IMG/Decorate/disco12.png" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="fondo--img-con">
-            <img class="fondo--img" data-red="/IMG/back/cosmos_1013439253.jpeg"
-                data-purple="/IMG/back/cosmos_528599043.jpeg" src="/IMG/back/cosmos_1013439253.jpeg">
-            <img class="fondo--img" data-red="/IMG/back/cosmos_1793317843.jpeg" data-purple="/IMG/back/descarga (4).jpg"
-                src="/IMG/back/cosmos_1793317843.jpeg">
-        </div>
-        <section class="intro--section">
-            <div class="GateOpened" id="GatesOfSettings">
-                <button class="botonesTocables" id="AnimateDiscos">+Animate Discos</button>
-                <button class="botonesTocables" id="AnimateRotation">+Animate Cursor</button>
-                <button class="botonesTocables" id="AnimateHover">+Animate Hover</button>
-                <button class="botonesTocables" id="ChangeColor">Theme Red</button>
-            </div>
-            <img class="fondo--img" data-red="/IMG/back/cosmos_1962622026.jpeg" data-purple="/IMG/back/jazz.jpg"
-                src="/IMG/back/cosmos_1962622026.jpeg">
-            <h1 class="intro--title"><img class="intro--title" data-red="/IMG/Decorate/" data-purple="/IMG/Decorate/"
-                    src="/IMG/Decorate/" alt=""></h1>
-            <p class="intro--text"></p>
-            <p class="intro--text intro--text2"></p>
-            <div class="container">
-                <div class="item">
-                    <img class="intro--img" src="/IMG//" data-text="">
-                </div>
-            </div>
-            <div id="overlay" class="overlay">
-                <div class="overlay--content">
-                    <img id="overlayImg" src="">
-                    <div class="overlay--description">
-                        <aside class="overlay--aside">
-                            <p id="overlayText"></p>
-                        </aside>
+    <div class="main--overlay--back">
+        <div class="main--overlay--back--opacity">
+            <header class="header">
+                <nav class="header--nav">
+                    <ul class="nav--ul">
+                        <li class="list--item">
+                            <a href="/index.html" class="item--link">Beginning 🏠</a>
+                        </li>
+                        <li class="list--item">
+                            <a href="/index2.html" class="item--link">Urban</a>
+                        </li>
+                        <li class="list--item">
+                            <a href="/index3.html" class="item--link">Nature</a>
+                        </li>
+                        <li class="list--item">
+                            <a href="" class="item--link">Animals</a>
+                        </li>
+                        <li class="list--item">
+                            <a href="" class="item--link">Sky</a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <div class="music--container">
+                    <div class="volume--container">
+                        <p id="song-name"><span></span></p>
+                        <input type="range" id="progress" min="0" max="100" value="0">
+                        <input type="range" class="volume--slider-input" id="volume-slider" min="0" max="100"
+                            value="10">
+                        <canvas id="visualizer" class="music--content-visualizer"></canvas>
+                    </div>
+                    <audio id="music--player"></audio>
+                    <div class="playlist">
+                        <button id="togglePlaylist">[O]</button>
+                        <button class="GateOpener" id="toggleAnimation">.Conf</button>
+                        <div class="track" data-vinyl="/IMG/Decorate/Disco1.png"
+                            data-song="/Music/a seaways -vcr classique.mp3" data-static="/IMG/Decorate/Disco1.png">
+                            <img src="/IMG/Decorate/Disco1.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco9.png"
+                            data-song="/Music/daydream - stella, pedram.mp3" data-static="/IMG/Decorate/disco9.png">
+                            <img src="/IMG/Decorate/disco9.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/nonamqqqe.png"
+                            data-song="/Music/jazz is for ordinary people.mp3"
+                            data-static="/IMG/Decorate/nonamqqqe.png">
+                            <img src="/IMG/Decorate/nonamqqqe.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco5.png" data-song="/Music/Side B_ Apéritif.mp3"
+                            data-static="/IMG/Decorate/disco5.png">
+                            <img src="/IMG/Decorate/disco5.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco7.png" data-song="/Music/Wicked Game.mp3"
+                            data-static="/IMG/Decorate/disco7.png">
+                            <img src="/IMG/Decorate/disco7.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/Disco3.png"
+                            data-song="/Music/Plage Noir & ELLIBOI - Neon Whispers.mp3"
+                            data-static="/IMG/Decorate/Disco3.png">
+                            <img src="/IMG/Decorate/Disco3.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco8.png" data-song="/Music/Villa Palmera.mp3"
+                            data-static="/IMG/Decorate/disco8.png">
+                            <img src="/IMG/Decorate/disco8.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco6.png"
+                            data-song="/Music/Gene Harris - Losalamitos (latin funk love song).mp3"
+                            data-static="/IMG/Decorate/disco6.png">
+                            <img src="/IMG/Decorate/disco6.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/Disco2.png" data-song="/Music/Synth.mp3"
+                            data-static="/IMG/Decorate/Disco2.png">
+                            <img src="/IMG/Decorate/Disco2.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco10.png"
+                            data-song="/Music/The Mama's & The Papa's - California Dreamin'.mp3"
+                            data-static="/IMG/Decorate/disco10.png">
+                            <img src="/IMG/Decorate/disco10.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco11.png"
+                            data-song="/Music/Sade - Never As Good As The First Time.mp3"
+                            data-static="/IMG/Decorate/disco11.png">
+                            <img src="/IMG/Decorate/disco11.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco12.png"
+                            data-song="/Music/Double - Devils Ball.mp3" data-static="/IMG/Decorate/disco12.png">
+                            <img src="/IMG/Decorate/disco12.png" alt="">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <p class="footer--text">
-            Copyright &copy; Inexistente, solo experimenta el exterior y aprecia lo
-            cotidiano
-        </p>
-        <div class="footer-div">
-            <hr>
-            <p><span class="footer--redes">Redes</span></p>
-            <div class="footer--div-div">
-                <p>
-                    <span class="footer--redes">Ig:<a class="footer--redes"
-                            href="https://www.instagram.com/turn1ph3ad/">@turn1ph3ad</a></span>
+                <div class="fondo--img-con">
+                    <img class="fondo--img" data-red="/IMG/back/" data-purple="/IMG/back/" src="/IMG/back/"
+                        loading="eager">
+                    <img class="fondo--img" data-red="/IMG/back/" data-purple="/IMG/back/" src="/IMG/back/"
+                        loading="eager">
+                </div>
+                <section class="intro--section">
+                    <div class="GateOpened" id="GatesOfSettings">
+                        <button class="botonesTocables" id="AnimateDiscos">+Animate Discos</button>
+                        <button class="botonesTocables" id="AnimateRotation">+Animate Cursor</button>
+                        <button class="botonesTocables" id="AnimateHover">+Animate Hover</button>
+                        <button class="botonesTocables" id="ChangeColor">Theme Red</button>
+                    </div>
+                    <img class="fondo--img" data-red="/IMG/back/" data-purple="/IMG/back/" src="/IMG/back/"
+                        loading="eager">
+                    <h1 class="intro--title"><img class="intro--title" data-red="/IMG/Decorate/"
+                            data-purple="/IMG/Decorate/" src="/IMG/Decorate/" alt="" loading="eager"
+                            fetchpriority="high"></h1>
+                    <p class="intro--text"></p>
+                    <p class="intro--text intro--text2"></p>
+                    <div class="container">
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" src="/IMG//" >
+                        </div>
+                    </div>
+                    <div id="overlay" class="overlay">
+                        <div class="overlay--content">
+                            <img id="overlayImg" src="">
+                            <div class="overlay--description">
+                                <aside class="overlay--aside">
+                                    <p id="overlayText"></p>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="footer">
+                <p class="footer--text">
+                    Copyright &copy; Inexistente, solo experimenta el exterior y aprecia lo cotidiano
                 </p>
-                <p>
-                    <span class="footer--redes">Discord: <span class="copy-text">@gumasito</span></span>
-                </p>
-            </div>
+                <div class="footer-div">
+                    <hr>
+                    <p><span class="footer--redes">Redes</span></p>
+                    <div class="footer--div-div">
+                        <p>
+                            <span class="footer--redes">Ig:<a class="footer--redes"
+                                    href="https://www.instagram.com/turn1ph3ad/">@turn1ph3ad</a></span>
+                        </p>
+                        <p>
+                            <span class="footer--redes">Discord: <span class="copy-text">@gumasito</span></span>
+                        </p>
+                    </div>
+                </div>
+            </footer>
         </div>
-    </footer>
+    </div>
     <script src="index.js"></script>
 </body>
-
 </html>

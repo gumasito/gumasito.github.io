@@ -2,254 +2,270 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pictures :star:</title>
-    <link rel="stylesheet" href="index.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Vast+Shadow&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <header class="header">
-        <nav class="header--nav">
-            <ul class="nav--ul">
-                <li class="list--item">
-                    <a href="/index2.html" class="item--link">Urban</a>
-                </li>
-                <li class="list--item"><a href="/index3.html" class="item--link">Nature</a></li>
-                <li class="list--item"><a href="" class="item--link">Humans</a></li>
-                <li class="list--item"><a href="" class="item--link">Animals</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="music--container">
-            <div class="volume--container">
-                <p id="song-name"><span></span></p>
-                <input type="range" id="progress" min="0" max="100" value="0">
-                <input type="range" class="volume--slider-input" id="volume-slider" min="0" max="100" value="10">
-                <canvas id="visualizer" class="music--content-visualizer"></canvas>
-            </div>
-            <audio id="music--player"></audio>
-            <div class="playlist">
-                <button id="togglePlaylist">[O]</button>
-                <button class="GateOpener" id="toggleAnimation">.Conf</button>
-                <div class="track" data-vinyl="/IMG/Decorate/Disco1.png" data-song="/Music/a seaways -vcr classique.mp3"
-                    data-static="/IMG/Decorate/Disco1.png">
-                    <img src="/IMG/Decorate/Disco1.png" alt="">
-                </div>
+    <div class="main--overlay--back">
+        <div class="main--overlay--back--opacity">
+            <header class="header">
+                <nav class="header--nav">
+                    <ul class="nav--ul">
+                        <li class="list--item">
+                            <a href="/index2.html" class="item--link">Urban</a>
+                        </li>
+                        <li class="list--item"><a href="/index3.html" class="item--link">Nature</a></li>
+                        <li class="list--item"><a href="/index4.html" class="item--link">Humans</a></li>
+                        <li class="list--item"><a href="" class="item--link">Animals</a></li>
+                        <li class="list--item"><a href="" class="item--link">Sky</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <div class="music--container">
+                    <div class="volume--container">
+                        <p id="song-name"><span></span></p>
+                        <input type="range" id="progress" min="0" max="100" value="0">
+                        <input type="range" class="volume--slider-input" id="volume-slider" min="0" max="100"
+                            value="10">
+                        <canvas id="visualizer" class="music--content-visualizer"></canvas>
+                    </div>
+                    <audio id="music--player"></audio>
+                    <div class="playlist">
+                        <button id="togglePlaylist">[O]</button>
+                        <button class="GateOpener" id="toggleAnimation">.Conf</button>
+                        <div class="track" data-vinyl="/IMG/Decorate/Disco1.png"
+                            data-song="/Music/a seaways -vcr classique.mp3" data-static="/IMG/Decorate/Disco1.png">
+                            <img src="/IMG/Decorate/Disco1.png" alt="">
+                        </div>
 
-                <div class="track" data-vinyl="/IMG/Decorate/disco9.png"
-                    data-song="/Music/daydream - stella, pedram.mp3" data-static="/IMG/Decorate/disco9.png">
-                    <img src="/IMG/Decorate/disco9.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/nonamqqqe.png"
-                    data-song="/Music/jazz is for ordinary people.mp3" data-static="/IMG/Decorate/nonamqqqe.png">
-                    <img src="/IMG/Decorate/nonamqqqe.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco5.png" data-song="/Music/Side B_ Apéritif.mp3"
-                    data-static="/IMG/Decorate/disco5.png">
-                    <img src="/IMG/Decorate/disco5.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco7.png" data-song="/Music/Wicked Game.mp3"
-                    data-static="/IMG/Decorate/disco7.png">
-                    <img src="/IMG/Decorate/disco7.png" alt="">
-                </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco9.png"
+                            data-song="/Music/daydream - stella, pedram.mp3" data-static="/IMG/Decorate/disco9.png">
+                            <img src="/IMG/Decorate/disco9.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/nonamqqqe.png"
+                            data-song="/Music/jazz is for ordinary people.mp3"
+                            data-static="/IMG/Decorate/nonamqqqe.png">
+                            <img src="/IMG/Decorate/nonamqqqe.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco5.png" data-song="/Music/Side B_ Apéritif.mp3"
+                            data-static="/IMG/Decorate/disco5.png">
+                            <img src="/IMG/Decorate/disco5.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco7.png" data-song="/Music/Wicked Game.mp3"
+                            data-static="/IMG/Decorate/disco7.png">
+                            <img src="/IMG/Decorate/disco7.png" alt="">
+                        </div>
 
-                <div class="track" data-vinyl="/IMG/Decorate/Disco3.png"
-                    data-song="/Music/Plage Noir & ELLIBOI - Neon Whispers.mp3" data-static="/IMG/Decorate/Disco3.png">
-                    <img src="/IMG/Decorate/Disco3.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco8.png" data-song="/Music/Villa Palmera.mp3"
-                    data-static="/IMG/Decorate/disco8.png">
-                    <img src="/IMG/Decorate/disco8.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco6.png"
-                    data-song="/Music/Gene Harris - Losalamitos (latin funk love song).mp3"
-                    data-static="/IMG/Decorate/disco6.png">
-                    <img src="/IMG/Decorate/disco6.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/Disco2.png" data-song="/Music/Synth.mp3"
-                    data-static="/IMG/Decorate/Disco2.png">
-                    <img src="/IMG/Decorate/Disco2.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco10.png"
-                    data-song="/Music/The Mama's & The Papa's - California Dreamin'.mp3"
-                    data-static="/IMG/Decorate/disco10.png">
-                    <img src="/IMG/Decorate/disco10.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco11.png"
-                    data-song="/Music/Sade - Never As Good As The First Time.mp3"
-                    data-static="/IMG/Decorate/disco11.png">
-                    <img src="/IMG/Decorate/disco11.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco12.png" data-song="/Music/Double - Devils Ball.mp3"
-                    data-static="/IMG/Decorate/disco12.png">
-                    <img src="/IMG/Decorate/disco12.png" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="fondo--img-con">
-            <img class="fondo--img" data-red="/IMG/back/cosmos_1013439253.jpeg"
-                data-purple="/IMG/back/cosmos_528599043.jpeg" src="/IMG/back/cosmos_1013439253.jpeg" loading="eager">
-            <img class="fondo--img" data-red="/IMG/back/cosmos_1793317843.jpeg" data-purple="/IMG/back/descarga (4).jpg"
-                src="/IMG/back/cosmos_1793317843.jpeg" loading="eager">
-        </div>
-        <section class="intro--section">
-            <div class="GateOpened" id="GatesOfSettings">
-                <button class="botonesTocables" id="AnimateDiscos">+Animate Discos</button>
-                <button class="botonesTocables" id="AnimateRotation">+Animate Cursor</button>
-                <button class="botonesTocables" id="AnimateHover">+Animate Hover</button>
-                <button class="botonesTocables" id="ChangeColor">Theme Red</button>
-            </div>
-            <img  class="fondo--img" data-red="/IMG/back/cosmos_1962622026.jpeg" data-purple="/IMG/back/jazz.jpg"
-                src="/IMG/back/cosmos_1962622026.jpeg" loading="eager" >
-            <h1 class="intro--title"><img class="intro--title" data-red="/IMG/Decorate/noname.png"
-                    data-purple="/IMG/Decorate/nonameP.png" src="/IMG/Decorate/noname.png" alt="Welcome Everybody"
-                    loading="eager" fetchpriority="high"></h1>
-            <p class="intro--text">
-                Os presento un viaje por mís capturas de mí vida a través de este
-                mundo digital y bienaventurada atmosfera comfortable
-            </p>
-            <p class="intro--text intro--text2">
-                he aquí una galería breve de mis favoritas y levemente selectas
-                imagenes
-            </p>
-            <div class="container">
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async"
-                        src="/IMG/Introduction/IMG_20260322_143441.webp" data-text="Rose">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Cumulonimbo"
-                        src="/IMG/Introduction/DSC9372.jpg">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Cirro"
-                        src="/IMG/Introduction/20240514_114754.webp">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Rosa"
-                        src="/IMG/Introduction/DSC13491.webp">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Delosperma"
-                        src="/IMG/Introduction/DSC0921.webp">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Dear Sofi"
-                        src="/IMG/Introduction/DSC1081.webp">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Hello?"
-                        src="/IMG/Introduction/DSC8166.jpg">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Fascinante"
-                        src="/IMG/Introduction/DSC0035.jpg">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Imponente Timbo"
-                        src="/IMG/Introduction/DSC0056.webp">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Luz?"
-                        src="/IMG/Introduction/DSC0212.webp">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Que lindo gatito"
-                        src="/IMG/Introduction/DSC7070.webp">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Heaven"
-                        src="/IMG/Introduction/DSC8069.jpg">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Cumulonimbo"
-                        src="/IMG/Introduction/DSC9463.webp">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text=" H. heptaphyllus"
-                        src="/IMG/Introduction/flowers.webp">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Buzzy💤"
-                        src="/IMG/Introduction/DSC6504111.webp">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Beautiful Day"
-                        src="/IMG/Introduction/DSC0730.webp">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Dear Home"
-                        src="/IMG/Introduction/IMG_20250328_184736.webp">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Cumulus Congestus"
-                        src="/IMG/Introduction/DSC9248.webp">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Strelitzia nicolai"
-                        src="/IMG/Introduction/DSC8302.webp">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Rosa Rosa"
-                        src="/IMG/Introduction/DSC4229.webp">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Fin del Camino"
-                        src="/IMG/Introduction/DSC8354.jpg">
-                </div>
-                <div class="item">
-                    <img class="intro--img" loading="lazy" decoding="async" data-text="Desastre"
-                        src="/IMG/Introduction/fire (2).jpg">
-                </div>
-            </div>
-            <div id="overlay" class="overlay">
-                <div class="overlay--content">
-                    <img id="overlayImg" src="">
-                    <div class="overlay--description">
-                        <aside class="overlay--aside">
-                            <p id="overlayText"></p>
-                        </aside>
+                        <div class="track" data-vinyl="/IMG/Decorate/Disco3.png"
+                            data-song="/Music/Plage Noir & ELLIBOI - Neon Whispers.mp3"
+                            data-static="/IMG/Decorate/Disco3.png">
+                            <img src="/IMG/Decorate/Disco3.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco8.png" data-song="/Music/Villa Palmera.mp3"
+                            data-static="/IMG/Decorate/disco8.png">
+                            <img src="/IMG/Decorate/disco8.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco6.png"
+                            data-song="/Music/Gene Harris - Losalamitos (latin funk love song).mp3"
+                            data-static="/IMG/Decorate/disco6.png">
+                            <img src="/IMG/Decorate/disco6.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/Disco2.png" data-song="/Music/Synth.mp3"
+                            data-static="/IMG/Decorate/Disco2.png">
+                            <img src="/IMG/Decorate/Disco2.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco10.png"
+                            data-song="/Music/The Mama's & The Papa's - California Dreamin'.mp3"
+                            data-static="/IMG/Decorate/disco10.png">
+                            <img src="/IMG/Decorate/disco10.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco11.png"
+                            data-song="/Music/Sade - Never As Good As The First Time.mp3"
+                            data-static="/IMG/Decorate/disco11.png">
+                            <img src="/IMG/Decorate/disco11.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco12.png"
+                            data-song="/Music/Double - Devils Ball.mp3" data-static="/IMG/Decorate/disco12.png">
+                            <img src="/IMG/Decorate/disco12.png" alt="">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="author--section">
-            <h2 class="author--title">Who tf am I? -Guma-</h2>
-            <p class="author--text">
-                Random persona, curioso e intrinsicamente encantado del arte.
-            </p>
-            <p class="author--text">
-                No busco reconocimiento, ni menos críticas. Solo busco que aprecien lo
-                cotidiano a traves de estas :p
-            </p>
-            <div class="author--pics">
-                <img class="author--pic" loading="lazy" decoding="async" src="/IMG/Author/DSC0502.jpg">
-                <img class="author--pic" loading="lazy" decoding="async" src="/IMG/Author/DSC8385.jpg">
-                <img class="author--pic" loading="lazy" decoding="async" src="/IMG/Author/IMG_20250520_192423.jpg">
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <p class="footer--text">
-            Copyright &copy; Inexistente, solo experimenta el exterior y aprecia lo
-            cotidiano
-        </p>
-        <div class="footer-div">
-            <hr>
-            <p><span class="footer--redes">Redes</span></p>
-            <div class="footer--div-div">
-                <p>
-                    <span class="footer--redes">Ig:<a class="footer--redes"
-                            href="https://www.instagram.com/turn1ph3ad/">@turn1ph3ad</a></span>
+                <div class="fondo--img-con">
+                    <img class="fondo--img" data-red="/IMG/back/imagen_deco_r20.jpg"
+                        data-purple="/IMG/back/imagen_deco_v2.jpeg" src="/IMG/back/imagen_deco_r20.jpg"
+                        loading="eager">
+                    <img class="fondo--img" data-red="/IMG/back/imagen_deco_r19.jfif"
+                        data-purple="/IMG/back/imagen_deco_v5.jpeg" src="/IMG/back/imagen_deco_r19.jfif" loading="eager">
+                </div>
+                <section class="intro--section">
+                    <div class="GateOpened" id="GatesOfSettings">
+                        <button class="botonesTocables" id="AnimateDiscos">+Animate Discos</button>
+                        <button class="botonesTocables" id="AnimateRotation">+Animate Cursor</button>
+                        <button class="botonesTocables" id="AnimateHover">+Animate Hover</button>
+                        <button class="botonesTocables" id="ChangeColor">Theme Red</button>
+                    </div>
+                    <img class="fondo--img" data-red="/IMG/back/imagen_deco_r9.jpeg" data-purple="/IMG/back/imagen_deco_v8.jpg"
+                        src="/IMG/back/imagen_deco_r9.jpeg" loading="eager">
+                    <h1 class="intro--title">Welcome Everybody</h1>
+                    <p class="intro--text">
+                        Os presento un viaje por mís capturas de mí vida a través de este
+                        mundo digital y bienaventurada atmosfera comfortable
+                    </p>
+                    <p class="intro--text intro--text2">
+                        he aquí una galería breve de mis favoritas y levemente selectas
+                        imagenes
+                    </p>
+                    <div class="container">
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async"
+                                src="/IMG/Introduction/IMG_20260322_143441.webp" data-text="Rose">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Cumulonimbo"
+                                src="/IMG/Introduction/DSC9372.jpg">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Cirro"
+                                src="/IMG/Introduction/20240514_114754.webp">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Rosa"
+                                src="/IMG/Introduction/DSC13491.webp">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Delosperma"
+                                src="/IMG/Introduction/DSC0921.webp">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Dear Sofi"
+                                src="/IMG/Introduction/DSC1081.webp">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Hello?"
+                                src="/IMG/Introduction/DSC8166.jpg">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Fascinante"
+                                src="/IMG/Introduction/DSC0035.jpg">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Imponente Timbo"
+                                src="/IMG/Introduction/DSC0056.webp">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Luz?"
+                                src="/IMG/Introduction/DSC0212.webp">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Que lindo gatito"
+                                src="/IMG/Introduction/DSC7070.webp">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Heaven"
+                                src="/IMG/Introduction/DSC8069.jpg">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Cumulonimbo"
+                                src="/IMG/Introduction/DSC9463.webp">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text=" H. heptaphyllus"
+                                src="/IMG/Introduction/flowers.webp">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Buzzy💤"
+                                src="/IMG/Introduction/DSC6504111.webp">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Beautiful Day"
+                                src="/IMG/Introduction/DSC0730.webp">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Dear Home"
+                                src="/IMG/Introduction/IMG_20250328_184736.webp">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Cumulus Congestus"
+                                src="/IMG/Introduction/DSC9248.webp">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Strelitzia nicolai"
+                                src="/IMG/Introduction/DSC8302.webp">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Rosa Rosa"
+                                src="/IMG/Introduction/DSC4229.webp">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Fin del Camino"
+                                src="/IMG/Introduction/DSC8354.jpg">
+                        </div>
+                        <div class="item">
+                            <img class="intro--img" loading="lazy" decoding="async" data-text="Desastre"
+                                src="/IMG/Introduction/fire (2).jpg">
+                        </div>
+                    </div>
+                    <div id="overlay" class="overlay">
+                        <div class="overlay--content">
+                            <img id="overlayImg" src="">
+                            <div class="overlay--description">
+                                <aside class="overlay--aside">
+                                    <p id="overlayText"></p>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="author--section">
+                    <div class="author--section-back">
+                        <h2 class="author--title">Who tf am I? -Guma-</h2>
+                        <p class="author--text">
+                            Random persona, curioso e intrinsicamente encantado del arte.
+                        </p>
+                        <p class="author--text">
+                            No busco reconocimiento, ni menos críticas. Solo busco que aprecien lo
+                            cotidiano a traves de estas :p
+                        </p>
+                    </div>
+                    <div class="author--pics">
+                        <img class="author--pic" loading="lazy" decoding="async" src="/IMG/Author/DSC0502.jpg">
+                        <img class="author--pic" loading="lazy" decoding="async" src="/IMG/Author/DSC8385.jpg">
+                        <img class="author--pic" loading="lazy" decoding="async"
+                            src="/IMG/Author/IMG_20250520_192423.jpg">
+                    </div>
+                </section>
+            </main>
+            <footer class="footer">
+                <p class="footer--text">
+                    Copyright &copy; Inexistente, solo experimenta el exterior y aprecia lo
+                    cotidiano
                 </p>
-                <p>
-                    <span class="footer--redes">Discord: <span class="copy-text">@gumasito</span></span>
-                </p>
-            </div>
+                <div class="footer-div">
+                    <hr>
+                    <p><span class="footer--redes">Redes</span></p>
+                    <div class="footer--div-div">
+                        <p>
+                            <span class="footer--redes">Ig:<a class="footer--redes"
+                                    href="https://www.instagram.com/turn1ph3ad/">@turn1ph3ad</a></span>
+                        </p>
+                        <p>
+                            <span class="footer--redes">Discord: <span class="copy-text">@gumasito</span></span>
+                        </p>
+                    </div>
+                </div>
+            </footer>
         </div>
-    </footer>
+    </div>
     <script src="index.js"></script>
 </body>
 

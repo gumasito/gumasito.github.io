@@ -2,602 +2,678 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pictures :star:</title>
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Vast+Shadow&family=Story+Script&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
 </head>
 
 <body>
-    <header class="header">
-        <nav class="header--nav">
-            <ul class="nav--ul">
-                <li class="list--item">
-                    <a href="/index.html" class="item--link">Beginning 🏠</a>
-                </li>
-                <li class="list--item"><a href="/index2.html" class="item--link">Urban</a></li>
-                <li class="list--item"><a href="" class="item--link">Humans</a></li>
-                <li class="list--item"><a href="" class="item--link">Animals</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="music--container">
-            <div class="volume--container">
-                <p id="song-name"><span></span></p>
-                <input type="range" id="progress" min="0" max="100" value="0">
-                <input type="range" class="volume--slider-input" id="volume-slider" min="0" max="100" value="10">
-                <canvas id="visualizer" class="music--content-visualizer"></canvas>
-            </div>
-            <audio id="music--player"></audio>
-            <div class="playlist">
-                <button id="togglePlaylist">[O]</button>
-                <button class="GateOpener" id="toggleAnimation">.Conf</button>
-                <div class="track" data-vinyl="/IMG/Decorate/Disco1.png" data-song="/Music/a seaways -vcr classique.mp3"
-                    data-static="/IMG/Decorate/Disco1.png">
-                    <img src="/IMG/Decorate/Disco1.png" alt="">
-                </div>
-
-                <div class="track" data-vinyl="/IMG/Decorate/disco9.png"
-                    data-song="/Music/daydream - stella, pedram.mp3" data-static="/IMG/Decorate/disco9.png">
-                    <img src="/IMG/Decorate/disco9.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/nonamqqqe.png"
-                    data-song="/Music/jazz is for ordinary people.mp3" data-static="/IMG/Decorate/nonamqqqe.png">
-                    <img src="/IMG/Decorate/nonamqqqe.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco5.png" data-song="/Music/Side B_ Apéritif.mp3"
-                    data-static="/IMG/Decorate/disco5.png">
-                    <img src="/IMG/Decorate/disco5.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco7.png" data-song="/Music/Wicked Game.mp3"
-                    data-static="/IMG/Decorate/disco7.png">
-                    <img src="/IMG/Decorate/disco7.png" alt="">
-                </div>
-
-                <div class="track" data-vinyl="/IMG/Decorate/Disco3.png"
-                    data-song="/Music/Plage Noir & ELLIBOI - Neon Whispers.mp3" data-static="/IMG/Decorate/Disco3.png">
-                    <img src="/IMG/Decorate/Disco3.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco8.png" data-song="/Music/Villa Palmera.mp3"
-                    data-static="/IMG/Decorate/disco8.png">
-                    <img src="/IMG/Decorate/disco8.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco6.png"
-                    data-song="/Music/Gene Harris - Losalamitos (latin funk love song).mp3"
-                    data-static="/IMG/Decorate/disco6.png">
-                    <img src="/IMG/Decorate/disco6.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/Disco2.png" data-song="/Music/Synth.mp3"
-                    data-static="/IMG/Decorate/Disco2.png">
-                    <img src="/IMG/Decorate/Disco2.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco10.png"
-                    data-song="/Music/The Mama's & The Papa's - California Dreamin'.mp3"
-                    data-static="/IMG/Decorate/disco10.png">
-                    <img src="/IMG/Decorate/disco10.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco11.png"
-                    data-song="/Music/Sade - Never As Good As The First Time.mp3"
-                    data-static="/IMG/Decorate/disco11.png">
-                    <img src="/IMG/Decorate/disco11.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco12.png" data-song="/Music/Double - Devils Ball.mp3"
-                    data-static="/IMG/Decorate/disco12.png">
-                    <img src="/IMG/Decorate/disco12.png" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="fondo--img-con">
-            <img class="fondo--img" data-red="/IMG/back/cosmos_429003695.jpeg" data-purple="/IMG/back/cosmos_1097434988.jpeg" src="/IMG/back/cosmos_429003695.jpeg" loading="eager">
-            <img class="fondo--img" data-red="/IMG/back/cosmos_675108447.jpeg" data-purple="/IMG/back/cosmos_466566996.jpeg" src="/IMG/back/cosmos_675108447.jpeg" loading="eager">
-        </div>
-        <section class="intro--section">
-            <div class="GateOpened" id="GatesOfSettings">
-                <button class="botonesTocables" id="AnimateDiscos">+Animate Discos</button>
-                <button class="botonesTocables" id="AnimateRotation">+Animate Cursor</button>
-                <button class="botonesTocables" id="AnimateHover">+Animate Hover</button>
-                <button class="botonesTocables" id="ChangeColor">Theme Red</button>
-            </div>
-            <img class="fondo--img fondo--img--nature" data-red="/IMG/back/m_sani studio_ Art, Prints & Gifts Online _ M.SANI STUDIO.jpg" data-purple="/IMG/back/cosmos_1377224492.jpeg" src="/IMG/back/m_sani studio_ Art, Prints & Gifts Online _ M.SANI STUDIO.jpg" loading="eager">
-            <h1 class="intro--title"><img class="intro--title" data-red="/IMG/Decorate/" data-purple="/IMG/Decorate/"
-                    src="/IMG/decorate/" alt="Welcome To the Plants" loading="eager" fetchpriority="high"></h1>
-            <p class="intro--text">
-                sean partícipes de la vida de los individuos vegetales en su habitat. luchando ante las adversidades del
-                urbanismo.
-            </p>
-            <p class="intro--text intro--text2">
-                he aqui una narracion de sus conocidas identidades, junto a sus raices.
-            </p>
-            <div class="container-nature">
-                <div class="item">
-                    <div class="item--nature">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC4229.webp">
+    <div class="main--overlay--back main--overlay--back--nature">
+        <div class="main--overlay--back--opacity">
+            <header class="header">
+                <nav class="header--nav">
+                    <ul class="nav--ul">
+                        <li class="list--item">
+                            <a href="/index.html" class="item--link">Beginning 🏠</a>
+                        </li>
+                        <li class="list--item"><a href="/index2.html" class="item--link">Urban</a></li>
+                        <li class="list--item"><a href="/index4.html" class="item--link">Humans</a></li>
+                        <li class="list--item"><a href="" class="item--link">Animals</a></li>
+                        <li class="list--item"><a href="" class="item--link">Sky</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <div class="music--container">
+                    <div class="volume--container">
+                        <p id="song-name"><span></span></p>
+                        <input type="range" id="progress" min="0" max="100" value="0">
+                        <input type="range" class="volume--slider-input" id="volume-slider" min="0" max="100"
+                            value="10">
+                        <canvas id="visualizer" class="music--content-visualizer"></canvas>
                     </div>
-                    <aside>
-                        <h2>Rosa</h2>En español —y en otras lenguas romances también— el término «rosa» proviene
-                        directamente y sin cambios del latín rosa, con el significado que conocemos: «la rosa» o «la
-                        flor del rosal», devenido del vocablo previo rodia [ródja] —por cambio similar como en: Clausus
-                        por Claudius—. Este último arcaísmo latino es, a su vez, prestado —a través del osco— del griego
-                        antiguo ρόδον [rhódon] «la rosa», «la flor del rosal».
-                    </aside>
-                    <aside>¿Sabías que...? El aroma de una rosa puede variar tanto entre variedades que algunas tienen
-                        notas cítricas, frutales o especiadas, además del clásico perfume floral.</aside>
-                </div>
-                <div class="item">
-                    <aside>
-                        <h2>Margarita</h2>La palabra margarita proviene del latín margarīta, que a su vez deriva del
-                        griego margarítēs, cuyo significado es "perla". Recibió este nombre por la semejanza entre sus
-                        pétalos blancos y el brillo de una perla.
-                    </aside>
-                    <div class="item--nature">
-                        <img loading="lazy" decoding="async" class="intro--img"
-                            src="/IMG/Nature/IMG_20251121_185141.jpg">
-                    </div>
-                    <aside>No Way!!! Aunque parecen una sola flor, lo que llamamos una margarita es en realidad un
-                        conjunto de muchas flores diminutas: el centro amarillo está formado por pequeñas flores
-                        tubulares, mientras que cada "pétalo" blanco es una flor individual. Juntas forman una única
-                        inflorescencia.</aside>
-                </div>
-                <div class="item">
-                    <aside>
-                        <h2>Achicoria</h2> (Cichorium intybus)
-                        La palabra achicoria proviene del latín cichorium, que a su vez deriva del griego kichórion,
-                        nombre con el que se conocía esta planta desde la antigüedad.
-                    </aside>
-                    <aside>Sabias!? La raíz de la achicoria, una vez tostada y molida, se ha utilizado durante siglos
-                        como sustituto o complemento del café, ya que aporta un sabor tostado y ligeramente amargo, pero
-                        no contiene cafeína.</aside>
-                    <div class="item--nature">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC1130111.webp">
-                    </div>
-                </div>
-                <div class="item">
-                    <aside>
-                        <h2>Antigonon Leptopus</h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis blanditiis
-                        consectetur
-                        reprehenderit impedit quisquam esse temporibus, maiores nulla soluta neque nemo nam odit
-                        dignissimos. Eius mollitia numquam voluptates! Consequuntur, ipsa.
-                    </aside>
-                    <div class="item--nature">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC9021.webp">
-                    </div>
-                    <aside>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis blanditiis consectetur
-                        reprehenderit impedit quisquam esse temporibus, maiores nulla soluta neque nemo nam odit
-                        dignissimos. Eius mollitia numquam voluptates! Consequuntur, ipsa.</aside>
-                </div>
-                <div class="item">
-                    <div class="item--nature">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8348.jpg">
-                    </div>
-                    <aside>
-                        <h2>Cactus San Pedro</h2>El nombre San Pedro se atribuye a la tradición popular andina. Según
-                        una explicación ampliamente difundida, hace referencia a San Pedro, considerado el guardián de
-                        las puertas del cielo, ya que se creía que este cactus favorecía experiencias de carácter
-                        espiritual. Su nombre científico más conocido es Echinopsis pachanoi (anteriormente clasificado
-                        como Trichocereus pachanoi).
-                    </aside>
-                    <aside>Dato Curioso!! El cactus San Pedro es una de las especies de cactus de crecimiento más
-                        rápido. En condiciones favorables puede crecer entre 30 y 60 cm por año, una velocidad poco
-                        común dentro de la familia de los cactus.</aside>
-                </div>
-                <div class="item">
-                    <aside>
-                        <h2>Hibisco</h2>La palabra hibisco proviene del latín hibiscus, que a su vez deriva del griego
-                        hibískos, nombre que se utilizaba en la Antigüedad para designar distintas plantas de
-                        características similares.
-                    </aside>
-                    <div class="item--nature">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8305.webp">
-                    </div>
-                    <aside>Las flores del hibisco suelen durar solo un día, pero la planta produce nuevos capullos de
-                        forma continua durante la temporada de floración, por lo que puede mantenerse llena de flores
-                        durante semanas o incluso meses.</aside>
-                </div>
-                <div class="item">
-                    <aside>
-                        <h2>Palmeras</h2>La palabra palmera proviene del latín palma, que significa "palma de la mano".
-                        El nombre hace referencia a la forma abierta y extendida de sus hojas, que recuerda a una mano
-                        con los dedos separados.
-                    </aside>
-                    <aside>WTF??? Aunque muchas personas las consideran árboles, las palmeras no son árboles en sentido
-                        botánico. Pertenecen a un grupo distinto de plantas y no forman anillos de crecimiento como los
-                        árboles tradicionales.</aside>
-                    <div class="item--nature">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC2410-2.jpg">
-                    </div>
-                </div>
-                <div class="item">
-                    <aside>
-                        <h2>Limonero</h2>La palabra palmera proviene del latín palma, que significa "palma de la mano".
-                        El nombre hace referencia a la forma abierta y extendida de sus hojas, que recuerda a una mano
-                        con los dedos separados.
-                    </aside>
-                    <div class="item--nature">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8318.webp">
-                    </div>
-                    <aside>WTF??? Aunque muchas personas las consideran árboles, las palmeras no son árboles en sentido
-                        botánico. Pertenecen a un grupo distinto de plantas y no forman anillos de crecimiento como los
-                        árboles tradicionales.</aside>
-                </div>
-                <div class="item">
-                    <div class="item--nature">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8013.webp">
-                    </div>
-                    <aside>
-                        <h2>Menta</h2>La palabra palmera proviene del latín palma, que significa "palma de la mano".
-                        El nombre hace referencia a la forma abierta y extendida de sus hojas, que recuerda a una mano
-                        con los dedos separados.
-                    </aside>
-                    <aside>WTF??? Aunque muchas personas las consideran árboles, las palmeras no son árboles en sentido
-                        botánico. Pertenecen a un grupo distinto de plantas y no forman anillos de crecimiento como los
-                        árboles tradicionales.</aside>
-                </div>
-                <div class="item">
-                    <aside>
-                        <h2>Romero</h2>La palabra palmera proviene del latín palma, que significa "palma de la mano".
-                        El nombre hace referencia a la forma abierta y extendida de sus hojas, que recuerda a una mano
-                        con los dedos separados.
-                    </aside>
-                    <div class="item--nature">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC3937.jpg">
-                    </div>
-                    <aside>WTF??? Aunque muchas personas las consideran árboles, las palmeras no son árboles en sentido
-                        botánico. Pertenecen a un grupo distinto de plantas y no forman anillos de crecimiento como los
-                        árboles tradicionales.</aside>
-                </div>
-                <div class="item">
-                    <aside>
-                        <h2>Varios</h2>
-                        <p>>He aqui pequeñas capturas de plantas poco vistas por mi parte. Pero de todas maneras se merecen la vista.</p>
-                    </aside>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC3108.jpg">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC3098.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC4090.jpg">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC4110.jpg">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC4079.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC4184.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC4209.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC4257.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC5598.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC6709.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC6730.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC6752.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC7672.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC7692.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC7914.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC7922.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8005.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8291.jpg">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8184.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8570.jpg">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8794.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8709.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC9204.jpg">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC9547.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/0240424_073626.jpg">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC7668.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC1090.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC7641.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC7695.webp">
-                    </div>
-                    <div class="item--nature--varios">
-                        <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8302.webp">
-                    </div>
-                </div>
-            </div>
-            <div class="flower-container">
-                <div class="flower-container-item">
-                    <h2 class="flower-container-item-title">--Rosa--</h2>
-                    <div class="swiper carrusel-flores">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
-                                    src="/IMG/Nature/DSC4225.webp" loading="lazy" decoding="async">
-                            </div>
-                            <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
-                                    src="/IMG/Nature/DSC4221.webp" loading="lazy" decoding="async">
-                            </div>
-                            <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
-                                    src="/IMG/Nature/DSC4229.webp" loading="lazy" decoding="async">
-                            </div>
-                            <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
-                                    src="/IMG/Nature/DSC4248.webp" loading="lazy" decoding="async">
-                            </div>
-                            <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
-                                    src="/IMG/Nature/DSC4254.webp" loading="lazy" decoding="async">
-                            </div>
-                            <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
-                                    src="/IMG/Nature/DSC4211.webp" loading="lazy" decoding="async">
-                            </div>
-                            <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
-                                    src="/IMG/Nature/DSC1359.webp" loading="lazy" decoding="async">
-                            </div>
-                            <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
-                                    src="/IMG/Nature/DSC7653.webp" loading="lazy" decoding="async">
-                            </div>
-                            <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
-                                    src="/IMG/Nature/DSC7657.webp" loading="lazy" decoding="async">
-                            </div>
-                            <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
-                                    src="/IMG/Nature/DSC7690.webp" loading="lazy" decoding="async">
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                    <div class="swiper carrusel-flores2">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide swiper-slide-nature2"><img class="intro--img"
-                                    src="/IMG/Nature/DSC8696.webp" loading="lazy" decoding="async">
-                            </div>
-                            <div class="swiper-slide swiper-slide-nature2"><img class="intro--img"
-                                    src="/IMG/Nature/DSC9061.jpg" loading="lazy" decoding="async">
-                            </div>
-                            <div class="swiper-slide swiper-slide-nature2"><img class="intro--img"
-                                    src="/IMG/Nature/DSC9079.webp" loading="lazy" decoding="async">
-                            </div>
-                            <div class="swiper-slide swiper-slide-nature2"><img class="intro--img"
-                                    src="/IMG/Nature/DSC9089.jpg" loading="lazy" decoding="async">
-                            </div>
-                            <div class="swiper-slide swiper-slide-nature2"><img class="intro--img"
-                                    src="/IMG/Nature/DSC9102.webp" loading="lazy" decoding="async">
-                            </div>
-                            <div class="swiper-slide swiper-slide-nature2"><img class="intro--img"
-                                    src="/IMG/Nature/DSC134911.webp" loading="lazy" decoding="async">
-                            </div>
-                            <div class="swiper-slide swiper-slide-nature2"><img class="intro--img"
-                                    src="/IMG/Nature/IMG_20260322_143451.jpg" loading="lazy" decoding="async">
-                            </div>
-                            <div class="swiper-slide swiper-slide-nature2"><img class="intro--img"
-                                    src="/IMG/Nature/DSC8354.jpg" loading="lazy" decoding="async">
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-                <div class="flower-container-item">
-                    <h2 class="flower-container-item-title">--Margarita--</h2>
-                    <div class="flower-container-grid">
-                        <div class="flower-container-grid-item">
-                            <img class="intro--img" src="/IMG/Nature/IMG_20251121_185141.jpg" data-text=""
-                                loading="lazy" decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item">
-                            <img class="intro--img" src="/IMG/Nature/IMG_20251121_185157.jpg" data-text=""
-                                loading="lazy" decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item">
-                            <img class="intro--img" src="/IMG/Nature/IMG_20251121_185138.jpg" data-text=""
-                                loading="lazy" decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item">
-                            <img class="intro--img" src="/IMG/Nature/IMG_20251121_185150.jpg" data-text=""
-                                loading="lazy" decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item">
-                            <img class="intro--img" src="/IMG/Nature/IMG_20251121_185144.jpg" data-text=""
-                                loading="lazy" decoding="async">
-                        </div>
-                    </div>
-                </div>
-                <div class="flower-container-item">
-                    <h2 class="flower-container-item-title">--Achicoria--</h2>
-                    <div class="flower-container-grid flower-container-grid-achicoria">
-                        <div class="flower-container-grid-item flower-container-grid-achicoria-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC1130111.webp" data-text="" loading="lazy"
-                                decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item flower-container-grid-achicoria-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC113011.webp" data-text="" loading="lazy"
-                                decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item flower-container-grid-achicoria-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC1258.webp" data-text="" loading="lazy"
-                                decoding="async">
-                        </div>
-                    </div>
-                </div>
-                <div class="flower-container-item">
-                    <h2 class="flower-container-item-title">--Antigonon Leptopus--</h2>
-                    <div class="flower-container-grid flower-container-grid-RosaRara">
-                        <div class="flower-container-grid-item flower-container-grid-RosaRara-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC9013.webp" data-text="" loading="lazy"
-                                decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item flower-container-grid-RosaRara-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC9015.webp" data-text="" loading="lazy"
-                                decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item flower-container-grid-RosaRara-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC9021.webp" data-text="" loading="lazy"
-                                decoding="async">
-                        </div>
-                    </div>
-                </div>
-                <div class="flower-container-item">
-                    <h2 class="flower-container-item-title">--Cactus--</h2>
-                    <div class="flower-container-grid flower-container-grid-cactus">
-                        <div class="flower-container-grid-item flower-container-grid-cactus-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC8351.webp" loading="lazy" decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item flower-container-grid-cactus-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC8348.jpg" loading="lazy" decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item flower-container-grid-cactus-item">
-                            <img class="intro--img" src="/IMG/Nature/IMG_20250314_190705.jpg" loading="lazy" decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item flower-container-grid-cactus-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC2873.webp" loading="lazy" decoding="async">
-                        </div>
-                    </div>
-                </div>
-                <div class="flower-container-item">
-                    <h2 class="flower-container-item-title">--Palmera--</h2>
-                    <div class="flower-container-grid flower-container-grid-palmera">
-                        <div class="flower-container-grid-item flower-container-grid-palmera-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC2392.jpg" data-text="" loading="lazy"
-                                decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item flower-container-grid-palmera-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC2410-2.jpg" data-text="" loading="lazy"
-                                decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item flower-container-grid-palmera-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC2464.jpg" data-text="" loading="lazy"
-                                decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item flower-container-grid-palmera-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC2395.jpg" data-text="" loading="lazy"
-                                decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item flower-container-grid-palmera-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC4293.webp" data-text="" loading="lazy"
-                                decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item flower-container-grid-palmera-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC8792.webp" data-text="" loading="lazy"
-                                decoding="async">
-                        </div>
-                    </div>
-                </div>
-                <div class="flower-container-item">
-                    <h2 class="flower-container-item-title">--Limonero--</h2>
-                    <div class="flower-container-grid flower-container-grid-limonero">
-                        <div class="flower-container-grid-item flower-container-grid-limonero-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC8316.webp" loading="lazy" decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item flower-container-grid-limonero-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC8923.webp" loading="lazy" decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item flower-container-grid-limonero-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC8318.webp" loading="lazy" decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item flower-container-grid-limonero-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC8324.webp" loading="lazy" decoding="async">
-                        </div>
-                    </div>
-                </div>
-                <div class="flower-container-item">
-                    <h2 class="flower-container-item-title">--Menta--</h2>
-                    <div class="flower-container-grid flower-container-grid-menta">
-                        <div class="flower-container-grid-item flower-container-grid-menta-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC8022.webp" loading="lazy" decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item flower-container-grid-menta-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC8016.webp" loading="lazy" decoding="async">
-                        </div>
-                        <div class="flower-container-grid-item flower-container-grid-menta-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC8013.webp" loading="lazy" decoding="async">
+                    <audio id="music--player"></audio>
+                    <div class="playlist">
+                        <button id="togglePlaylist">[O]</button>
+                        <button class="GateOpener" id="toggleAnimation">.Conf</button>
+                        <div class="track" data-vinyl="/IMG/Decorate/Disco1.png"
+                            data-song="/Music/a seaways -vcr classique.mp3" data-static="/IMG/Decorate/Disco1.png">
+                            <img src="/IMG/Decorate/Disco1.png" alt="">
                         </div>
 
+                        <div class="track" data-vinyl="/IMG/Decorate/disco9.png"
+                            data-song="/Music/daydream - stella, pedram.mp3" data-static="/IMG/Decorate/disco9.png">
+                            <img src="/IMG/Decorate/disco9.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/nonamqqqe.png"
+                            data-song="/Music/jazz is for ordinary people.mp3"
+                            data-static="/IMG/Decorate/nonamqqqe.png">
+                            <img src="/IMG/Decorate/nonamqqqe.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco5.png" data-song="/Music/Side B_ Apéritif.mp3"
+                            data-static="/IMG/Decorate/disco5.png">
+                            <img src="/IMG/Decorate/disco5.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco7.png" data-song="/Music/Wicked Game.mp3"
+                            data-static="/IMG/Decorate/disco7.png">
+                            <img src="/IMG/Decorate/disco7.png" alt="">
+                        </div>
+
+                        <div class="track" data-vinyl="/IMG/Decorate/Disco3.png"
+                            data-song="/Music/Plage Noir & ELLIBOI - Neon Whispers.mp3"
+                            data-static="/IMG/Decorate/Disco3.png">
+                            <img src="/IMG/Decorate/Disco3.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco8.png" data-song="/Music/Villa Palmera.mp3"
+                            data-static="/IMG/Decorate/disco8.png">
+                            <img src="/IMG/Decorate/disco8.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco6.png"
+                            data-song="/Music/Gene Harris - Losalamitos (latin funk love song).mp3"
+                            data-static="/IMG/Decorate/disco6.png">
+                            <img src="/IMG/Decorate/disco6.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/Disco2.png" data-song="/Music/Synth.mp3"
+                            data-static="/IMG/Decorate/Disco2.png">
+                            <img src="/IMG/Decorate/Disco2.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco10.png"
+                            data-song="/Music/The Mama's & The Papa's - California Dreamin'.mp3"
+                            data-static="/IMG/Decorate/disco10.png">
+                            <img src="/IMG/Decorate/disco10.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco11.png"
+                            data-song="/Music/Sade - Never As Good As The First Time.mp3"
+                            data-static="/IMG/Decorate/disco11.png">
+                            <img src="/IMG/Decorate/disco11.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco12.png"
+                            data-song="/Music/Double - Devils Ball.mp3" data-static="/IMG/Decorate/disco12.png">
+                            <img src="/IMG/Decorate/disco12.png" alt="">
+                        </div>
                     </div>
                 </div>
-                <div class="flower-container-item">
-                    <h2 class="flower-container-item-title">--Romero--</h2>
-                    <div class="flower-container-grid flower-container-grid-romero">
-                        <div class="flower-container-grid-item flower-container-grid-romero-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC3944.jpg" loading="lazy" decoding="async">
+                <div class="fondo--img-con">
+                    <img class="fondo--img" data-red="/IMG/back/imagen_deco_r7.jpeg"
+                        data-purple="/IMG/back/imagen_deco_v4.jpeg" src="/IMG/back/imagen_deco_r7.jpeg"
+                        loading="eager">
+                    <img class="fondo--img" data-red="/IMG/back/imagen_deco_r6.jpeg"
+                        data-purple="/IMG/back/imagen_deco_v7.jfif" src="/IMG/back/imagen_deco_r6.jpeg"
+                        loading="eager">
+                </div>
+                <section class="intro--section">
+                    <div class="GateOpened" id="GatesOfSettings">
+                        <button class="botonesTocables" id="AnimateDiscos">+Animate Discos</button>
+                        <button class="botonesTocables" id="AnimateRotation">+Animate Cursor</button>
+                        <button class="botonesTocables" id="AnimateHover">+Animate Hover</button>
+                        <button class="botonesTocables" id="ChangeColor">Theme Red</button>
+                    </div>
+                    <img class="fondo--img fondo--img--nature"
+                        data-red="/IMG/back/imagen_deco_r14.jpeg"
+                        data-purple="/IMG/back/imagen_deco_v11.jpg"
+                        src="/IMG/back/imagen_deco_r14.jpeg" loading="eager">
+                    <h1 class="intro--title">Welcome To The Plants</h1>
+                    <p class="intro--text">
+                        sean partícipes de la vida de los individuos vegetales en su habitat. luchando ante las
+                        adversidades del
+                        urbanismo.
+                    </p>
+                    <p class="intro--text intro--text2">
+                        he aqui una narracion de sus conocidas identidades, junto a sus raices.
+                    </p>
+                    <div class="container-nature">
+                        <div class="item">
+                            <div class="item--nature">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC4229.webp">
+                            </div>
+                            <aside>
+                                <h2>Rosa</h2>En español —y en otras lenguas romances también— el término «rosa» proviene
+                                directamente y sin cambios del latín rosa, con el significado que conocemos: «la rosa» o
+                                «la
+                                flor del rosal», devenido del vocablo previo rodia [ródja] —por cambio similar como en:
+                                Clausus
+                                por Claudius—. Este último arcaísmo latino es, a su vez, prestado —a través del osco—
+                                del griego
+                                antiguo ρόδον [rhódon] «la rosa», «la flor del rosal».
+                            </aside>
+                            <aside>¿Sabías que...? El aroma de una rosa puede variar tanto entre variedades que algunas
+                                tienen
+                                notas cítricas, frutales o especiadas, además del clásico perfume floral.</aside>
                         </div>
-                        <div class="flower-container-grid-item flower-container-grid-romero-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC03951.jpg" loading="lazy" decoding="async">
+                        <div class="item">
+                            <aside>
+                                <h2>Margarita</h2>La palabra margarita proviene del latín margarīta, que a su vez deriva
+                                del
+                                griego margarítēs, cuyo significado es "perla". Recibió este nombre por la semejanza
+                                entre sus
+                                pétalos blancos y el brillo de una perla.
+                            </aside>
+                            <div class="item--nature">
+                                <img loading="lazy" decoding="async" class="intro--img"
+                                    src="/IMG/Nature/IMG_20251121_185141.jpg">
+                            </div>
+                            <aside>No Way!!! Aunque parecen una sola flor, lo que llamamos una margarita es en realidad
+                                un
+                                conjunto de muchas flores diminutas: el centro amarillo está formado por pequeñas flores
+                                tubulares, mientras que cada "pétalo" blanco es una flor individual. Juntas forman una
+                                única
+                                inflorescencia.</aside>
                         </div>
-                        <div class="flower-container-grid-item flower-container-grid-romero-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC3969.jpg" loading="lazy" decoding="async">
+                        <div class="item">
+                            <aside>
+                                <h2>Achicoria</h2> (Cichorium intybus)
+                                La palabra achicoria proviene del latín cichorium, que a su vez deriva del griego
+                                kichórion,
+                                nombre con el que se conocía esta planta desde la antigüedad.
+                            </aside>
+                            <aside>Sabias!? La raíz de la achicoria, una vez tostada y molida, se ha utilizado durante
+                                siglos
+                                como sustituto o complemento del café, ya que aporta un sabor tostado y ligeramente
+                                amargo, pero
+                                no contiene cafeína.</aside>
+                            <div class="item--nature">
+                                <img loading="lazy" decoding="async" class="intro--img"
+                                    src="/IMG/Nature/DSC1130111.webp">
+                            </div>
                         </div>
-                        <div class="flower-container-grid-item flower-container-grid-romero-item">
-                            <img class="intro--img" src="/IMG/Nature/DSC3937.jpg" loading="lazy" decoding="async">
+                        <div class="item">
+                            <aside>
+                                <h2>Antigonon Leptopus</h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Omnis
+                                blanditiis
+                                consectetur
+                                reprehenderit impedit quisquam esse temporibus, maiores nulla soluta neque nemo nam odit
+                                dignissimos. Eius mollitia numquam voluptates! Consequuntur, ipsa.
+                            </aside>
+                            <div class="item--nature">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC9021.webp">
+                            </div>
+                            <aside>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis blanditiis
+                                consectetur
+                                reprehenderit impedit quisquam esse temporibus, maiores nulla soluta neque nemo nam odit
+                                dignissimos. Eius mollitia numquam voluptates! Consequuntur, ipsa.</aside>
+                        </div>
+                        <div class="item">
+                            <div class="item--nature">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8348.jpg">
+                            </div>
+                            <aside>
+                                <h2>Cactus San Pedro</h2>El nombre San Pedro se atribuye a la tradición popular andina.
+                                Según
+                                una explicación ampliamente difundida, hace referencia a San Pedro, considerado el
+                                guardián de
+                                las puertas del cielo, ya que se creía que este cactus favorecía experiencias de
+                                carácter
+                                espiritual. Su nombre científico más conocido es Echinopsis pachanoi (anteriormente
+                                clasificado
+                                como Trichocereus pachanoi).
+                            </aside>
+                            <aside>Dato Curioso!! El cactus San Pedro es una de las especies de cactus de crecimiento
+                                más
+                                rápido. En condiciones favorables puede crecer entre 30 y 60 cm por año, una velocidad
+                                poco
+                                común dentro de la familia de los cactus.</aside>
+                        </div>
+                        <div class="item">
+                            <aside>
+                                <h2>Hibisco</h2>La palabra hibisco proviene del latín hibiscus, que a su vez deriva del
+                                griego
+                                hibískos, nombre que se utilizaba en la Antigüedad para designar distintas plantas de
+                                características similares.
+                            </aside>
+                            <div class="item--nature">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8305.webp">
+                            </div>
+                            <aside>Las flores del hibisco suelen durar solo un día, pero la planta produce nuevos
+                                capullos de
+                                forma continua durante la temporada de floración, por lo que puede mantenerse llena de
+                                flores
+                                durante semanas o incluso meses.</aside>
+                        </div>
+                        <div class="item">
+                            <aside>
+                                <h2>Palmeras</h2>La palabra palmera proviene del latín palma, que significa "palma de la
+                                mano".
+                                El nombre hace referencia a la forma abierta y extendida de sus hojas, que recuerda a
+                                una mano
+                                con los dedos separados.
+                            </aside>
+                            <aside>WTF??? Aunque muchas personas las consideran árboles, las palmeras no son árboles en
+                                sentido
+                                botánico. Pertenecen a un grupo distinto de plantas y no forman anillos de crecimiento
+                                como los
+                                árboles tradicionales.</aside>
+                            <div class="item--nature">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC2410-2.jpg">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <aside>
+                                <h2>Limonero</h2>La palabra palmera proviene del latín palma, que significa "palma de la
+                                mano".
+                                El nombre hace referencia a la forma abierta y extendida de sus hojas, que recuerda a
+                                una mano
+                                con los dedos separados.
+                            </aside>
+                            <div class="item--nature">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8318.webp">
+                            </div>
+                            <aside>WTF??? Aunque muchas personas las consideran árboles, las palmeras no son árboles en
+                                sentido
+                                botánico. Pertenecen a un grupo distinto de plantas y no forman anillos de crecimiento
+                                como los
+                                árboles tradicionales.</aside>
+                        </div>
+                        <div class="item">
+                            <div class="item--nature">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8013.webp">
+                            </div>
+                            <aside>
+                                <h2>Menta</h2>La palabra palmera proviene del latín palma, que significa "palma de la
+                                mano".
+                                El nombre hace referencia a la forma abierta y extendida de sus hojas, que recuerda a
+                                una mano
+                                con los dedos separados.
+                            </aside>
+                            <aside>WTF??? Aunque muchas personas las consideran árboles, las palmeras no son árboles en
+                                sentido
+                                botánico. Pertenecen a un grupo distinto de plantas y no forman anillos de crecimiento
+                                como los
+                                árboles tradicionales.</aside>
+                        </div>
+                        <div class="item">
+                            <aside>
+                                <h2>Romero</h2>La palabra palmera proviene del latín palma, que significa "palma de la
+                                mano".
+                                El nombre hace referencia a la forma abierta y extendida de sus hojas, que recuerda a
+                                una mano
+                                con los dedos separados.
+                            </aside>
+                            <div class="item--nature">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC3937.jpg">
+                            </div>
+                            <aside>WTF??? Aunque muchas personas las consideran árboles, las palmeras no son árboles en
+                                sentido
+                                botánico. Pertenecen a un grupo distinto de plantas y no forman anillos de crecimiento
+                                como los
+                                árboles tradicionales.</aside>
+                        </div>
+                        <div class="item">
+                            <aside>
+                                <h2>Varios</h2>
+                                <p>>He aqui pequeñas capturas de plantas poco vistas por mi parte. Pero de todas maneras
+                                    se
+                                    merecen la vista.</p>
+                            </aside>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC3108.jpg">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC3098.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC4090.jpg">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC4110.jpg">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC4079.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC4184.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC4209.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC4257.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC5598.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC6709.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC6730.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC6752.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC7672.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC7692.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC7914.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC7922.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8005.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8291.jpg">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8184.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8570.jpg">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8794.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8709.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC9204.jpg">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC9547.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img"
+                                    src="/IMG/Nature/0240424_073626.jpg">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC7668.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC1090.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC7641.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC7695.webp">
+                            </div>
+                            <div class="item--nature--varios">
+                                <img loading="lazy" decoding="async" class="intro--img" src="/IMG/Nature/DSC8302.webp">
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div id="overlay" class="overlay">
-                <div class="overlay--content">
-                    <img id="overlayImg" src="">
-                    <div class="overlay--description">
-                        <aside class="overlay--aside">
-                            <p id="overlayText"></p>
-                        </aside>
+                    <div class="flower-container">
+                        <div class="flower-container-item">
+                            <h2 class="flower-container-item-title">--Rosa--</h2>
+                            <div class="swiper carrusel-flores">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
+                                            src="/IMG/Nature/DSC4225.webp" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
+                                            src="/IMG/Nature/DSC4221.webp" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
+                                            src="/IMG/Nature/DSC4229.webp" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
+                                            src="/IMG/Nature/DSC4248.webp" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
+                                            src="/IMG/Nature/DSC4254.webp" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
+                                            src="/IMG/Nature/DSC4211.webp" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
+                                            src="/IMG/Nature/DSC1359.webp" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
+                                            src="/IMG/Nature/DSC7653.webp" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
+                                            src="/IMG/Nature/DSC7657.webp" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-nature"><img class="intro--img"
+                                            src="/IMG/Nature/DSC7690.webp" loading="lazy" decoding="async">
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="swiper carrusel-flores2">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide swiper-slide-nature2"><img class="intro--img"
+                                            src="/IMG/Nature/DSC8696.webp" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-nature2"><img class="intro--img"
+                                            src="/IMG/Nature/DSC9061.jpg" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-nature2"><img class="intro--img"
+                                            src="/IMG/Nature/DSC9079.webp" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-nature2"><img class="intro--img"
+                                            src="/IMG/Nature/DSC9089.jpg" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-nature2"><img class="intro--img"
+                                            src="/IMG/Nature/DSC9102.webp" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-nature2"><img class="intro--img"
+                                            src="/IMG/Nature/DSC134911.webp" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-nature2"><img class="intro--img"
+                                            src="/IMG/Nature/IMG_20260322_143451.jpg" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-nature2"><img class="intro--img"
+                                            src="/IMG/Nature/DSC8354.jpg" loading="lazy" decoding="async">
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="flower-container-item">
+                            <h2 class="flower-container-item-title">--Margarita--</h2>
+                            <div class="flower-container-grid">
+                                <div class="flower-container-grid-item">
+                                    <img class="intro--img" src="/IMG/Nature/IMG_20251121_185141.jpg"
+                                        loading="lazy" decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item">
+                                    <img class="intro--img" src="/IMG/Nature/IMG_20251121_185157.jpg" 
+                                        loading="lazy" decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item">
+                                    <img class="intro--img" src="/IMG/Nature/IMG_20251121_185138.jpg" 
+                                        loading="lazy" decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item">
+                                    <img class="intro--img" src="/IMG/Nature/IMG_20251121_185150.jpg" 
+                                        loading="lazy" decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item">
+                                    <img class="intro--img" src="/IMG/Nature/IMG_20251121_185144.jpg" 
+                                        loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flower-container-item">
+                            <h2 class="flower-container-item-title">--Achicoria--</h2>
+                            <div class="flower-container-grid flower-container-grid-achicoria">
+                                <div class="flower-container-grid-item flower-container-grid-achicoria-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC1130111.webp" 
+                                        loading="lazy" decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-achicoria-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC113011.webp"  loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-achicoria-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC1258.webp"  loading="lazy"
+                                        decoding="async">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flower-container-item">
+                            <h2 class="flower-container-item-title">--Antigonon Leptopus--</h2>
+                            <div class="flower-container-grid flower-container-grid-RosaRara">
+                                <div class="flower-container-grid-item flower-container-grid-RosaRara-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC9013.webp"  loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-RosaRara-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC9015.webp"  loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-RosaRara-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC9021.webp"  loading="lazy"
+                                        decoding="async">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flower-container-item">
+                            <h2 class="flower-container-item-title">--Cactus--</h2>
+                            <div class="flower-container-grid flower-container-grid-cactus">
+                                <div class="flower-container-grid-item flower-container-grid-cactus-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC8351.webp" loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-cactus-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC8348.jpg" loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-cactus-item">
+                                    <img class="intro--img" src="/IMG/Nature/IMG_20250314_190705.jpg" loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-cactus-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC2873.webp" loading="lazy"
+                                        decoding="async">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flower-container-item">
+                            <h2 class="flower-container-item-title">--Palmera--</h2>
+                            <div class="flower-container-grid flower-container-grid-palmera">
+                                <div class="flower-container-grid-item flower-container-grid-palmera-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC2392.jpg"  loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-palmera-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC2410-2.jpg"  loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-palmera-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC2464.jpg" loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-palmera-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC2395.jpg" loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-palmera-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC4293.webp" loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-palmera-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC8792.webp" loading="lazy"
+                                        decoding="async">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flower-container-item">
+                            <h2 class="flower-container-item-title">--Limonero--</h2>
+                            <div class="flower-container-grid flower-container-grid-limonero">
+                                <div class="flower-container-grid-item flower-container-grid-limonero-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC8316.webp" loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-limonero-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC8923.webp" loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-limonero-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC8318.webp" loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-limonero-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC8324.webp" loading="lazy"
+                                        decoding="async">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flower-container-item">
+                            <h2 class="flower-container-item-title">--Menta--</h2>
+                            <div class="flower-container-grid flower-container-grid-menta">
+                                <div class="flower-container-grid-item flower-container-grid-menta-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC8022.webp" loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-menta-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC8016.webp" loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-menta-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC8013.webp" loading="lazy"
+                                        decoding="async">
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="flower-container-item">
+                            <h2 class="flower-container-item-title">--Romero--</h2>
+                            <div class="flower-container-grid flower-container-grid-romero">
+                                <div class="flower-container-grid-item flower-container-grid-romero-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC3944.jpg" loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-romero-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC03951.jpg" loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-romero-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC3969.jpg" loading="lazy"
+                                        decoding="async">
+                                </div>
+                                <div class="flower-container-grid-item flower-container-grid-romero-item">
+                                    <img class="intro--img" src="/IMG/Nature/DSC3937.jpg" loading="lazy"
+                                        decoding="async">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <p class="footer--text">
-            Copyright &copy; Inexistente, solo experimenta el exterior y aprecia lo
-            cotidiano
-        </p>
-        <div class="footer-div">
-            <hr>
-            <p><span class="footer--redes">Redes</span></p>
-            <div class="footer--div-div">
-                <p>
-                    <span class="footer--redes">Ig:<a class="footer--redes"
-                            href="https://www.instagram.com/turn1ph3ad/">@turn1ph3ad</a></span>
+                    <div id="overlay" class="overlay">
+                        <div class="overlay--content">
+                            <img id="overlayImg" src="">
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="footer">
+                <p class="footer--text">
+                    Copyright &copy; Inexistente, solo experimenta el exterior y aprecia lo
+                    cotidiano
                 </p>
-                <p>
-                    <span class="footer--redes">Discord: <span class="copy-text">@gumasito</span></span>
-                </p>
-            </div>
+                <div class="footer-div">
+                    <hr>
+                    <p><span class="footer--redes">Redes</span></p>
+                    <div class="footer--div-div">
+                        <p>
+                            <span class="footer--redes">Ig:<a class="footer--redes"
+                                    href="https://www.instagram.com/turn1ph3ad/">@turn1ph3ad</a></span>
+                        </p>
+                        <p>
+                            <span class="footer--redes">Discord: <span class="copy-text">@gumasito</span></span>
+                        </p>
+                    </div>
+                </div>
+            </footer>
         </div>
-    </footer>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="index.js"></script>
 </body>

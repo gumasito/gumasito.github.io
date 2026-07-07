@@ -12,6 +12,34 @@ if (window.location.pathname.includes("index.html")) {
     };
     showMusicWarning()
 }
+if (window.location.pathname.includes("index3.html")) {
+    function showMusicWarning() {
+        const warning =
+            document.createElement("div");
+        warning.className = "music-warning";
+        warning.textContent = "Great to Plants";
+        document.body.appendChild(
+            warning);
+        setTimeout(
+            () => warning.remove(), 10000
+        );
+    };
+    showMusicWarning()
+}
+if (window.location.pathname.includes("index4.html")) {
+    function showMusicWarning() {
+        const warning =
+            document.createElement("div");
+        warning.className = "music-warning";
+        warning.textContent = "U should meet them!!";
+        document.body.appendChild(
+            warning);
+        setTimeout(
+            () => warning.remove(), 10000
+        );
+    };
+    showMusicWarning()
+}
 if (window.location.pathname.includes("index2.html")) {
     function showMusicWarning() {
         const warning =
@@ -32,6 +60,7 @@ if (window.location.pathname.includes("index2.html")) {
         slidesPerView: 4,
         freeMode: true,
         watchSlidesProgress: true,
+        loop: true,
     });
     //! GRANDE
     var swiper2 = new Swiper(".mySwiper2", {
@@ -52,12 +81,8 @@ if (window.location.pathname.includes("index2.html")) {
         grid: {
             rows: 2,
         },
-        spaceBetween: 30,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-            type: "fraction" //bullets - fraction - progressbar
-        }, scrollbar: {
+        spaceBetween: 10,
+        scrollbar: {
             el: ".swiper-scrollbar",
             draggable: true,
             direction: "horizontal",
@@ -496,7 +521,7 @@ configs.forEach(button => {
 
 function updateAnimations() {
     const backImg = document.querySelectorAll(".fondo--img");
-    const titleImg = document.querySelector("h1 .intro--title");
+    //const titleImg = document.querySelector("h1 .intro--title");
     if (!animateDisks) {
         volumeSlider.classList.remove("rotating");
         tracks.forEach(track => {
@@ -534,11 +559,11 @@ function updateAnimations() {
 
         if (document.body.classList.contains("theme_purple")) {
             img.src = img.dataset.purple;
-            titleImg.src = titleImg.dataset.purple;
+            //titleImg.src = titleImg.dataset.purple;
         }
         if (document.body.classList.contains("theme_red")) {
             img.src = img.dataset.red;
-            titleImg.src = titleImg.dataset.red;
+            //titleImg.src = titleImg.dataset.red;
         }
     });
 }

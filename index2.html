@@ -5,409 +5,426 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pictures :star:</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Vast+Shadow&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
 </head>
 
 <body>
-    <header class="header">
-        <nav class="header--nav">
-            <ul class="nav--ul">
-                <li class="list--item"><a href="/index.html" class="item--link">Beginning 🏠</a></li>
-                <li class="list--item"><a href="/index3.html" class="item--link">Nature</a></li>
-                <li class="list--item"><a href="" class="item--link">Humans</a></li>
-                <li class="list--item"><a href="" class="item--link">Animals</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="music--container">
-            <div class="volume--container">
-                <p id="song-name"><span></span></p>
-                <input type="range" id="progress" min="0" max="100" value="0">
-                <input type="range" class="volume--slider-input" id="volume-slider" min="0" max="100" value="10">
-                <canvas id="visualizer" class="music--content-visualizer"></canvas>
-            </div>
-            <audio id="music--player"></audio>
-            <div class="playlist">
-                <button id="togglePlaylist">[O]</button>
-                <button class="GateOpener" id="toggleAnimation">.Conf</button>
-                <div class="track" data-vinyl="/IMG/Decorate/Disco1.png" data-song="/Music/a seaways -vcr classique.mp3"
-                    data-static="/IMG/Decorate/Disco1.png">
-                    <img src="/IMG/Decorate/Disco1.png" alt="">
-                </div>
+    <div class="main--overlay--back main--overlay--back--urban">
+        <div class="main--overlay--back--opacity">
+            <header class="header">
+                <nav class="header--nav">
+                    <ul class="nav--ul">
+                        <li class="list--item"><a href="/index.html" class="item--link">Beginning 🏠</a></li>
+                        <li class="list--item"><a href="/index3.html" class="item--link">Nature</a></li>
+                        <li class="list--item"><a href="/index4.html" class="item--link">Humans</a></li>
+                        <li class="list--item"><a href="" class="item--link">Animals</a></li>
+                        <li class="list--item"><a href="" class="item--link">Sky</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <div class="music--container">
+                    <div class="volume--container">
+                        <p id="song-name"><span></span></p>
+                        <input type="range" id="progress" min="0" max="100" value="0">
+                        <input type="range" class="volume--slider-input" id="volume-slider" min="0" max="100"
+                            value="10">
+                        <canvas id="visualizer" class="music--content-visualizer"></canvas>
+                    </div>
+                    <audio id="music--player"></audio>
+                    <div class="playlist">
+                        <button id="togglePlaylist">[O]</button>
+                        <button class="GateOpener" id="toggleAnimation">.Conf</button>
+                        <div class="track" data-vinyl="/IMG/Decorate/Disco1.png"
+                            data-song="/Music/a seaways -vcr classique.mp3" data-static="/IMG/Decorate/Disco1.png">
+                            <img src="/IMG/Decorate/Disco1.png" alt="">
+                        </div>
 
-                <div class="track" data-vinyl="/IMG/Decorate/disco9.png"
-                    data-song="/Music/daydream - stella, pedram.mp3" data-static="/IMG/Decorate/disco9.png">
-                    <img src="/IMG/Decorate/disco9.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/nonamqqqe.png"
-                    data-song="/Music/jazz is for ordinary people.mp3" data-static="/IMG/Decorate/nonamqqqe.png">
-                    <img src="/IMG/Decorate/nonamqqqe.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco5.png" data-song="/Music/Side B_ Apéritif.mp3"
-                    data-static="/IMG/Decorate/disco5.png">
-                    <img src="/IMG/Decorate/disco5.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco7.png" data-song="/Music/Wicked Game.mp3"
-                    data-static="/IMG/Decorate/disco7.png">
-                    <img src="/IMG/Decorate/disco7.png" alt="">
-                </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco9.png"
+                            data-song="/Music/daydream - stella, pedram.mp3" data-static="/IMG/Decorate/disco9.png">
+                            <img src="/IMG/Decorate/disco9.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/nonamqqqe.png"
+                            data-song="/Music/jazz is for ordinary people.mp3"
+                            data-static="/IMG/Decorate/nonamqqqe.png">
+                            <img src="/IMG/Decorate/nonamqqqe.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco5.png" data-song="/Music/Side B_ Apéritif.mp3"
+                            data-static="/IMG/Decorate/disco5.png">
+                            <img src="/IMG/Decorate/disco5.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco7.png" data-song="/Music/Wicked Game.mp3"
+                            data-static="/IMG/Decorate/disco7.png">
+                            <img src="/IMG/Decorate/disco7.png" alt="">
+                        </div>
 
-                <div class="track" data-vinyl="/IMG/Decorate/Disco3.png"
-                    data-song="/Music/Plage Noir & ELLIBOI - Neon Whispers.mp3" data-static="/IMG/Decorate/Disco3.png">
-                    <img src="/IMG/Decorate/Disco3.png" alt="">
+                        <div class="track" data-vinyl="/IMG/Decorate/Disco3.png"
+                            data-song="/Music/Plage Noir & ELLIBOI - Neon Whispers.mp3"
+                            data-static="/IMG/Decorate/Disco3.png">
+                            <img src="/IMG/Decorate/Disco3.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco8.png" data-song="/Music/Villa Palmera.mp3"
+                            data-static="/IMG/Decorate/disco8.png">
+                            <img src="/IMG/Decorate/disco8.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco6.png"
+                            data-song="/Music/Gene Harris - Losalamitos (latin funk love song).mp3"
+                            data-static="/IMG/Decorate/disco6.png">
+                            <img src="/IMG/Decorate/disco6.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/Disco2.png" data-song="/Music/Synth.mp3"
+                            data-static="/IMG/Decorate/Disco2.png">
+                            <img src="/IMG/Decorate/Disco2.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco10.png"
+                            data-song="/Music/The Mama's & The Papa's - California Dreamin'.mp3"
+                            data-static="/IMG/Decorate/disco10.png">
+                            <img src="/IMG/Decorate/disco10.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco11.png"
+                            data-song="/Music/Sade - Never As Good As The First Time.mp3"
+                            data-static="/IMG/Decorate/disco11.png">
+                            <img src="/IMG/Decorate/disco11.png" alt="">
+                        </div>
+                        <div class="track" data-vinyl="/IMG/Decorate/disco12.png"
+                            data-song="/Music/Double - Devils Ball.mp3" data-static="/IMG/Decorate/disco12.png">
+                            <img src="/IMG/Decorate/disco12.png" alt="">
+                        </div>
+                    </div>
                 </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco8.png" data-song="/Music/Villa Palmera.mp3"
-                    data-static="/IMG/Decorate/disco8.png">
-                    <img src="/IMG/Decorate/disco8.png" alt="">
+                <div class="fondo--img-con">
+                    <img class="fondo--img" data-red="/IMG/back/imagen_deco_r15.jpeg"
+                        data-purple="/IMG/back/imagen_deco_v3.jpeg" src="/IMG/back/imagen_deco_r15.jpeg"
+                        loading="eager">
+                    <img class="fondo--img" data-red="/IMG/back/imagen_deco_16.jpeg"
+                        data-purple="/IMG/back/imagen_deco_r5.jpeg" src="/IMG/back/imagen_deco_16.jpeg" loading="eager">
                 </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco6.png"
-                    data-song="/Music/Gene Harris - Losalamitos (latin funk love song).mp3"
-                    data-static="/IMG/Decorate/disco6.png">
-                    <img src="/IMG/Decorate/disco6.png" alt="">
+                <section class="intro--section">
+                    <div class="GateOpened" id="GatesOfSettings">
+                        <button class="botonesTocables" id="AnimateDiscos">+Animate Discos</button>
+                        <button class="botonesTocables" id="AnimateRotation">+Animate Cursor</button>
+                        <button class="botonesTocables" id="AnimateHover">+Animate Hover</button>
+                        <button class="botonesTocables" id="ChangeColor">Theme Red</button>
+                    </div>
+                    <img class="fondo--img" data-red="/IMG/back/imagen_deco_r8.jpeg"
+                        data-purple="/IMG/back/imagen_deco_v10.jpg" src="/IMG/back/imagen_deco_r8.jpeg" loading="eager">
+                    <h1 class="intro--title">Hi AGAIN!!</h1>
+                    <p class="intro--text"> Espero que hayan disfrutado la seccion introductoria :D</p>
+                    <p class="intro--text intro--text2"> En esta categoría, seran testigos de mis capturas de lo urbano
+                        -o lo
+                        que yo
+                        consideraria, outhoming-. Espero que disfruten :p</p>
+                    <div style="--swiper-navigation-color: #fb6b6b; --swiper-pagination-color: #fff"
+                        class="swiper mySwiper2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/prim.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/gem_port.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/rosario_gem.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/gem_bridg.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5421.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5240.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/cas_gem.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/DSC4126.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5270.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5299.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/DSC4068.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5305.webp">
+                            </div>
+                        </div>
+                    </div>
+                    <div thumbsSlider="" class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/prim.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/gem_port.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/rosario_gem.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/gem_bridg.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5421.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5240.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/cas_gem.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/DSC4126.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5270.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5299.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/DSC4068.webp">
+                            </div>
+                            <div class="swiper-slide">
+                                <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5305.webp">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper3--container">
+                        <div class="swiper mySwiper3">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC4127.webp">
+                                    <aside>Kahuma</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC4289.webp">
+                                    <aside>Piedrita</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC5164.webp">
+                                    <aside>No me pagaron :c</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC4593.webp">
+                                    <aside>Pobre Muñeco</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC5309.webp">
+                                    <aside>Canillita</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC5452.webp">
+                                    <aside>Barquito</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC5517.webp">
+                                    <aside>Que lindo</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC5312.webp">
+                                    <aside>Me zarpe</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC5603.webp">
+                                    <aside>Super Random</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC5880.webp">
+                                    <aside>Axion²</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC5973.webp">
+                                    <aside>Deprecated</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC5763.webp">
+                                    <aside>V.Lopez</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC5538.webp">
+                                    <aside>Compren, Baratos</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC5648.webp">
+                                    <aside>2025</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC5670.webp">
+                                    <aside>Pintos?</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC4682.webp">
+                                    <aside>R.I.P.</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC5348.webp">
+                                    <aside>Majestuoso</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC6046.webp">
+                                    <aside>Hi!!</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC6140.webp">
+                                    <aside>Almacenes</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC6095.webp">
+                                    <aside>Que horror</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC6094.webp">
+                                    <aside>Galeria Opresiva</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC6147.webp">
+                                    <aside>Chill</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC6150.webp">
+                                    <aside>Nostalgic</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC6168.webp">
+                                    <aside>Soledad</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC6170.webp">
+                                    <aside>Añoros</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC6506.webp">
+                                    <aside>2xFriar</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC6134.webp">
+                                    <aside>?</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC6083.webp">
+                                    <aside>Para Poner en Acto</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/nelson.webp">
+                                    <aside>☀️Nelson☀️</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/noname.webp">
+                                    <aside>Calmo</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/IMG_20250317_185641.webp">
+                                    <aside>[Amigostes]</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC4069.webp">
+                                    <aside>Urban</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC61471.webp">
+                                    <aside>Chill again</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/estructure.webp">
+                                    <aside>Que horror</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/estat_gem.webp">
+                                    <aside>Lindo Spot</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC8938.webp">
+                                    <aside>Casita</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC6576.webp">
+                                    <aside>Que lejos</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC6577.webp">
+                                    <aside>Asi mejor</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/port_gem.webp">
+                                    <aside>?2.0</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/spooky.webp">
+                                    <aside>Wazaa</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/gemin.webp">
+                                    <aside>Que lindo</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC8346.webp">
+                                    <aside>Molinito Viejo</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC8339.webp">
+                                    <aside>Molinito</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC6093.webp">
+                                    <aside>Trabajo?</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/DSC5608.webp">
+                                    <aside>Increible</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/skycrap.jpg">
+                                    <aside>CODMW Vibes</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/cat.jpg">
+                                    <aside>Bizantino</aside>
+                                </div>
+                                <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async"
+                                        class="intro--img" src="/IMG/Urban/logs.webp">
+                                    <aside>Logs Misteriosos</aside>
+                                </div>
+                            </div>
+                            <div class="swiper-scrollbar"></div>
+                        </div>
+                    </div>
+                    <div id="overlay" class="overlay">
+                        <div class="overlay--content">
+                            <img id="overlayImg" src="">
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="footer">
+                <p class="footer--text">Copyright &copy; Inexistente, solo experimenta el exterior y aprecia lo
+                    cotidiano</p>
+                <div class="footer-div">
+                    <hr>
+                    <p><span class="footer--redes">Redes</span></p>
+                    <div class="footer--div-div">
+                        <p><span class="footer--redes">Ig:<a class="footer--redes"
+                                    href="https://www.instagram.com/turn1ph3ad/">
+                                    @turn1ph3ad</a></span></p>
+                        <p><span class="footer--redes">Discord: <span class="copy-text">@gumasito</span></span></p>
+                    </div>
                 </div>
-                <div class="track" data-vinyl="/IMG/Decorate/Disco2.png" data-song="/Music/Synth.mp3"
-                    data-static="/IMG/Decorate/Disco2.png">
-                    <img src="/IMG/Decorate/Disco2.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco10.png"
-                    data-song="/Music/The Mama's & The Papa's - California Dreamin'.mp3"
-                    data-static="/IMG/Decorate/disco10.png">
-                    <img src="/IMG/Decorate/disco10.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco11.png"
-                    data-song="/Music/Sade - Never As Good As The First Time.mp3"
-                    data-static="/IMG/Decorate/disco11.png">
-                    <img src="/IMG/Decorate/disco11.png" alt="">
-                </div>
-                <div class="track" data-vinyl="/IMG/Decorate/disco12.png" data-song="/Music/Double - Devils Ball.mp3"
-                    data-static="/IMG/Decorate/disco12.png">
-                    <img src="/IMG/Decorate/disco12.png" alt="">
-                </div>
-            </div>
+            </footer>
         </div>
-        <div class="fondo--img-con">
-            <img class="fondo--img" data-red="/IMG/back/cosmos_872063771.jpeg" data-purple="/IMG/back/randompurple.jpg"
-                src="/IMG/back/cosmos_872063771.jpeg" loading="eager">
-            <img class="fondo--img" data-red="/IMG/back/cosmos_2032045946.jpeg" data-purple="/IMG/back/descarga (2).jpg"
-                src="/IMG/back/cosmos_2032045946.jpeg" loading="eager">
-        </div>
-        <section class="intro--section">
-            <div class="GateOpened" id="GatesOfSettings">
-                <button class="botonesTocables" id="AnimateDiscos">+Animate Discos</button>
-                <button class="botonesTocables" id="AnimateRotation">+Animate Cursor</button>
-                <button class="botonesTocables" id="AnimateHover">+Animate Hover</button>
-                <button class="botonesTocables" id="ChangeColor">Theme Red</button>
-            </div>
-            <img class="fondo--img" data-red="/IMG/back/cosmos_1110479542.jpeg" data-purple="/IMG/back/descarga (3).jpg"
-                src="/IMG/back/cosmos_1110479542.jpeg" loading="eager">
-            <h1 class="intro--title"><img class="intro--title" data-red="/IMG/Decorate/index2.png"
-                    data-purple="/IMG/Decorate/index2P.png" src="/IMG/Decorate/index2.png" alt="HI AGAIN!!"
-                    loading="eager" fetchpriority="high"></h1>
-            <p class="intro--text"> Espero que hayan disfrutado la seccion introductoria :D</p>
-            <p class="intro--text intro--text2"> En esta categoría, seran testigos de mis capturas de lo urbano -o lo
-                que yo
-                consideraria, outhoming-. Espero que disfruten :p</p>
-            <div style="--swiper-navigation-color: #fb6b6b; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/prim.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/gem_port.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/rosario_gem.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/gem_bridg.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5421.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5240.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/cas_gem.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/DSC4126.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5270.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5299.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/DSC4068.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5305.webp">
-                    </div>
-                </div>
-            </div>
-            <div thumbsSlider="" class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/prim.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/gem_port.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/rosario_gem.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/gem_bridg.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5421.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5240.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/cas_gem.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/DSC4126.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5270.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5299.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/DSC4068.webp">
-                    </div>
-                    <div class="swiper-slide">
-                        <img loading="lazy" decoding="async" src="/IMG/Urban/DSC5305.webp">
-                    </div>
-                </div>
-            </div>
-            <div class="swiper3--container">
-                <div class="swiper mySwiper3">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC4127.webp">
-                            <aside>Kahuma</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC4289.webp">
-                            <aside>Piedrita</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC5164.webp">
-                            <aside>No me pagaron :c</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC4593.webp">
-                            <aside>Pobre Muñeco</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC5309.webp">
-                            <aside>Canillita</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC5452.webp">
-                            <aside>Barquito</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC5517.webp">
-                            <aside>Que lindo</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC5312.webp">
-                            <aside>Me zarpe</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC5603.webp">
-                            <aside>Super Random</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC5880.webp">
-                            <aside>Axion²</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC5973.webp">
-                            <aside>Deprecated</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC5763.webp">
-                            <aside>V.Lopez</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC5538.webp">
-                            <aside>Compren, Baratos</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC5648.webp">
-                            <aside>2025</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC5670.webp">
-                            <aside>Pintos?</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC4682.webp">
-                            <aside>R.I.P.</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC5348.webp">
-                            <aside>Majestuoso</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC6046.webp">
-                            <aside>Hi!!</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC6140.webp">
-                            <aside>Almacenes</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC6095.webp">
-                            <aside>Que horror</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC6094.webp">
-                            <aside>Galeria Opresiva</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC6147.webp">
-                            <aside>Chill</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC6150.webp">
-                            <aside>Nostalgic</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC6168.webp">
-                            <aside>Soledad</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC6170.webp">
-                            <aside>Añoros</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC6506.webp">
-                            <aside>2xFriar</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC6134.webp">
-                            <aside>?</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC6083.webp">
-                            <aside>Para Poner en Acto</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/nelson.webp">
-                            <aside>☀️Nelson☀️</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/noname.webp">
-                            <aside>Calmo</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/IMG_20250317_185641.webp">
-                            <aside>[Amigostes]</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC4069.webp">
-                            <aside>Urban</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC61471.webp">
-                            <aside>Chill again</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/estructure.webp">
-                            <aside>Que horror</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/estat_gem.webp">
-                            <aside>Lindo Spot</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC8938.webp">
-                            <aside>Casita</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC6576.webp">
-                            <aside>Que lejos</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC6577.webp">
-                            <aside>Asi mejor</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/port_gem.webp">
-                            <aside>?2.0</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/spooky.webp">
-                            <aside>Wazaa</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/gemin.webp">
-                            <aside>Que lindo</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC8346.webp">
-                            <aside>Molinito Viejo</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC8339.webp">
-                            <aside>Molinito</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC6093.webp">
-                            <aside>Trabajo?</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/DSC5608.webp">
-                            <aside>Increible</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/skycrap.jpg">
-                            <aside>CODMW Vibes</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/cat.jpg">
-                            <aside>Bizantino</aside>
-                        </div>
-                        <div class="swiper-slide swiper-slide3"><img loading="lazy" decoding="async" class="intro--img"
-                                src="/IMG/Urban/logs.webp">
-                            <aside>Logs Misteriosos</aside>
-                        </div>
-                    </div>
-                    <div class="swiper-scrollbar"></div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-            <div id="overlay" class="overlay">
-                <div class="overlay--content">
-                    <img id="overlayImg" src="">
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <p class="footer--text">Copyright &copy; Inexistente, solo experimenta el exterior y aprecia lo cotidiano</p>
-        <div class="footer-div">
-            <hr>
-            <p><span class="footer--redes">Redes</span></p>
-            <div class="footer--div-div">
-                <p><span class="footer--redes">Ig:<a class="footer--redes" href="https://www.instagram.com/turn1ph3ad/">
-                            @turn1ph3ad</a></span></p>
-                <p><span class="footer--redes">Discord: <span class="copy-text">@gumasito</span></span></p>
-            </div>
-        </div>
-    </footer>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="index.js"></script>
 </body>
